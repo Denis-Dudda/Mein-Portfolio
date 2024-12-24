@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+section{
+  @include dFlex($g:32px);
+}
+
+.contact-me-container{
+  @include dFlex();
+  >span{
+  font-size: 64px;
+  font-weight: bold;
+  color: transparent; /* Der Text ist transparent */
+  -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
+  background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  }
+}
+
+.impressum-container{
+  @include dFlex();
+  flex-direction: column;
+}

@@ -1,0 +1,55 @@
+@import '../../styles.scss';
+
+section{
+  @include dFlex($g:16px);
+  >.why-me{
+    font-size: 64px;
+    font-weight: bold;
+    color: transparent; /* Der Text ist transparent */
+    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
+    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+  }
+}
+
+.why-me-contant{
+  width: 840px;
+  color: white;
+  position: relative;
+  >button{
+    position: absolute;
+    bottom: -60px;
+    right: 40px;
+    border-radius: 30px;
+    width: 135px;
+    height: 44px;
+    background-color: var(--primary-color);
+    border: none;
+  }
+  >p{
+    margin-bottom: 48px;
+  }
+}
+
+.i-am{
+  color: var(--primary-color);
+  font-size: 40px;
+}
+
+.icon-wrapper{
+  @include dFlex($g:88px);
+  >div{
+    @include dFlex($g:8px);
+    flex-direction: column;
+    >img{
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+.arrow-right{
+  position: absolute;
+    bottom: -220px;
+    right: -144px;
+}

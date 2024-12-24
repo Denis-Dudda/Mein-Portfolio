@@ -1,0 +1,13 @@
+@import '../../../styles.scss';
+
+section{
+  @include dFlex();
+}
+
+.description{
+  color: white;
+}
+
+.name-container{
+  color: var(--primary-color);
+}

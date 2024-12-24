@@ -1,0 +1,68 @@
+@import '../../styles.scss';
+
+section{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/img/Photo.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  >img{
+    position: absolute;
+    right: 20px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.arrow-right{
+  height: 50px;
+  width: 107px;
+}
+
+div{
+  @include dFlex();
+  flex-direction: column;
+  >h1{
+    font-size: 68px;
+    color:var(--primary-color);
+
+
+
+  }
+  > h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: transparent; /* Der Text ist transparent */
+    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
+    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    margin-block-start: -1.17em;
+    margin-block-end: -7.17em;
+    margin-inline-start: 214px;
+    margin-inline-end: 0px;
+    opacity: 0;
+  }
+}
+
+.fade-in-normal {
+  animation: fade-in-bottom-normal 1s ease-in-out 0s 1 normal forwards; /* Endzustand bleibt sichtbar */
+  opacity: 0; /* Sicherstellen, dass es unsichtbar startet */
+}
+
+.delay {
+  animation-delay: 0.5s; /* Verzögert die Animation des Untertitels */
+}
+
+@keyframes fade-in-bottom-normal {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

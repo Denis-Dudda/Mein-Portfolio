@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+section{
+  display: flex;
+}
+nav{
+  width: 172px;
+  height: 100vh;
+  background-color: var(--primary-color);
+  @include dFlex($g:32px);
+  writing-mode: vertical-rl;
+  direction: rtl;
+  box-shadow: 21px 2px 17px 9px rgba(0,0,0,0.94);
+  position: fixed;
+  z-index: 999;
+  >a{
+    text-decoration: none;
+    transform: rotate(180deg);
+    font-size: 40px;
+    color: rgb(74,74,74);
+    &:hover{
+      color: white;
+    }
+  }
+}

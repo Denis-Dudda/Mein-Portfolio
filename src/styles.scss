@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Quantico';
+    src: url(./assets/fonts/Quantico-Bold.ttf),
+         url(./assets/fonts/Quantico-BoldItalic.ttf),
+         url(./assets/fonts/Quantico-Italic.ttf),
+         url(./assets/fonts/Quantico-Regular.ttf);
+        } 
+  
+  html{
+    min-width: min-content;
+  
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100vh;
+    background: linear-gradient(88.66deg, #000000 11.41%, #2C2B2B 22.29%, #0B0A0A 37.32%, #323232 58.54%, #0B0A0A 70.03%);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Quantico';
+    overflow-y: hidden;
+    overflow-x: hidden; 
+  }
+  
+  .contant-wrapper{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @mixin dFlex($jc:center,$ai:center,$g:0px){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+  }
+  
+  :root{
+    --primary-color:rgb(181,233,59);
+    --text-color: white;
+  }
+  

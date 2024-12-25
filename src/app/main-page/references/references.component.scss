@@ -1,12 +1,14 @@
-@import '../../styles.scss';
+@import '../../../styles.scss';
 
 section{
-  @include dFlex($g:32px);
+  @include dFlex();
+  >div{
+    @include dFlex($g:32px);
+    flex-direction: column;
+  }
 }
 
-.contact-me-container{
-  @include dFlex();
-  >span{
+h2{
   font-size: 64px;
   font-weight: bold;
   color: transparent; /* Der Text ist transparent */
@@ -14,10 +16,13 @@ section{
   background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
   transform: rotate(180deg);
   writing-mode: vertical-rl;
-  }
 }
 
-.impressum-container{
+app-ref-cards{
   @include dFlex();
-  flex-direction: column;
+  width: 400px;
+  height: 200px;
+  border-radius: 40px;
+  border: 2px solid;
+  border-color: var(--primary-color);
 }

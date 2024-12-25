@@ -1,8 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from './shared/nav/nav.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 @Component({
   selector: 'app-root',

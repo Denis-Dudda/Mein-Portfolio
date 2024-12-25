@@ -1,0 +1,27 @@
+@import '../../styles.scss';
+
+app-why-me{
+    @include dFlex();
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  app-my-skill-set{
+    @include dFlex();
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column-reverse;
+  }
+  
+  app-my-work{
+    @include dFlex();
+    
+  }
+  
+  app-references{
+    @include dFlex();
+  }
+  
+  app-contact-me{
+    @include dFlex();
+  }

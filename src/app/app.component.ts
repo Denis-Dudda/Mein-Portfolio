@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NavComponent } from './shared/nav/nav.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -7,7 +7,7 @@ nav{
   width: 172px;
   height: 100vh;
   background-color: var(--primary-color);
-  @include dFlex($g:32px);
+  @include dFlex($jc:space-evenly,$g:32px);
   writing-mode: vertical-rl;
   direction: rtl;
   box-shadow: 21px 2px 17px 9px rgba(0,0,0,0.94);
@@ -21,8 +21,11 @@ nav{
     &:hover{
       color: white;
     }
-    >img{
-      rotate: 180deg;
-    }
+  }
+}
+
+.nav-img-container{
+  img{
+  rotate: 180deg;
   }
 }

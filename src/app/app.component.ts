@@ -1,14 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { SocialIconsComponent } from './shared/social-icons/social-icons.component';
-import { WhyMeComponent } from './why-me/why-me.component';
-import { MySkillSetComponent } from './my-skill-set/my-skill-set.component';
-import { MyWorkComponent } from './my-work/my-work.component';
-import { ReferencesComponent } from './references/references.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +10,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    HeroComponent,
+    MainPageComponent,
     NavComponent,
-    SocialIconsComponent,
-    WhyMeComponent,
-    MySkillSetComponent,
-    MyWorkComponent,
-    ReferencesComponent,
-    ContactMeComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

@@ -31,7 +31,7 @@ section{
 }
 
 .projekt-description-container{
-
+  height: 100%;
   ul{
     padding-inline-start: 0px;
   }
@@ -45,7 +45,7 @@ section{
 
 
 .projekt-img-container{    // muss noch bearbeitet werden //
-@include dFlex();
+@include dFlex($g:16px);
 flex-direction: column;
 >div{
   display: flex;

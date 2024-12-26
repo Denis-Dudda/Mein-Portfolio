@@ -1,15 +1,17 @@
 @import '../../styles.scss';
 
 app-why-me{
-    @include dFlex();
+    @include dFlex($ai:flex-start);
     width: 100vw;
     height: 100vh;
+    padding-top: 2%
   }
   
   app-my-skill-set{
-    @include dFlex();
+    @include dFlex($jc:flex-start);
     width: 100vw;
     height: 100vh;
+    margin-top: -2%;
     flex-direction: column-reverse;
   }
   

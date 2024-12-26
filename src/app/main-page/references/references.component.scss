@@ -2,10 +2,16 @@
 
 section{
   @include dFlex();
+  height: 780px;
   >div{
-    @include dFlex($g:32px);
+    @include dFlex($jc:flex-end, $g:32px);
     flex-direction: column;
   }
+}
+
+.ref-title-container{
+  height: 100%;
+  
 }
 
 h2{
@@ -23,6 +29,7 @@ app-ref-cards{
   width: 400px;
   height: 200px;
   border-radius: 40px;
-  border: 2px solid;
+  border: 1px solid;
   border-color: var(--primary-color);
+  padding: 16px;
 }

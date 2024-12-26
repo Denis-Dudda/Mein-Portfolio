@@ -2,14 +2,12 @@
 
 app-why-me{
     @include dFlex($ai:flex-start);
-    width: 100vw;
     height: 100vh;
     padding-top: 2%
   }
   
   app-my-skill-set{
     @include dFlex($jc:flex-start);
-    width: 100vw;
     height: 100vh;
     margin-top: -2%;
     flex-direction: column-reverse;

@@ -3,13 +3,13 @@
 app-why-me{
     @include dFlex($ai:flex-start);
     height: 100vh;
-    padding-top: 2%
+    min-width: 50vw;
   }
   
   app-my-skill-set{
     @include dFlex($jc:flex-start);
     height: 100vh;
-    margin-top: -2%;
+    min-width: 50vw;
     flex-direction: column-reverse;
   }
   
@@ -20,6 +20,7 @@ app-why-me{
   
   app-references{
     @include dFlex();
+    min-width: 50vw;
   }
   
   app-contact-me{

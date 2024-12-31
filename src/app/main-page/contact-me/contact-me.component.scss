@@ -17,7 +17,41 @@ section{
   }
 }
 
+form{
+  >input{
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    height: 40px;
+    width: 460px;
+    background-color: black;
+  }
+}
+
 .impressum-container{
-  @include dFlex();
+  @include dFlex($g:20px);
+  flex-direction: column;
+  height: 600px;
+  width: 400px;
+  color: white;
+  h4{
+    color: var(--primary-color);
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  img{
+    rotate: 180deg;
+  }
+  >div{
+    @include dFlex($g:8px);
+    >img{
+      rotate: 0deg;
+    }
+  }
+}
+
+.notice-policy-container{
   flex-direction: column;
 }
+

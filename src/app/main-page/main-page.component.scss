@@ -1,12 +1,16 @@
 @import '../../styles.scss';
 
   app-why-me{
-    margin-top: 54px
+    margin-top: 54px;
+    padding-left: 120px;
+    padding-right: 120px;
   }
   
   app-my-skill-set{
     @include dFlex($ai:flex-end);
-    margin-bottom: 150px
+    margin-bottom: 200px;
+    padding-left: 120px;
+    padding-right: 120px;
   }
   
   app-my-work{

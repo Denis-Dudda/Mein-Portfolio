@@ -1,6 +1,9 @@
 @import '../../../styles.scss';
 
 .my-work{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
   font-size: 64px;
   font-weight: bold;
   color: transparent; /* Der Text ist transparent */
@@ -10,10 +13,13 @@
   writing-mode: vertical-rl;
 }
 
+.card-wrapper{
+  display: flex;
+}
 
 .arrow-work{
   position: relative;
-  top: 108px;
+  top: -26px;
 }
 
 .title-container{

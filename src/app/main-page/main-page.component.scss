@@ -1,16 +1,12 @@
 @import '../../styles.scss';
 
 app-why-me{
-    @include dFlex($ai:flex-start);
-    height: 100vh;
-    min-width: 50vw;
+    @include dFlex();
   }
   
   app-my-skill-set{
-    @include dFlex($jc:flex-start);
-    height: 100vh;
-    min-width: 50vw;
-    flex-direction: column-reverse;
+    @include dFlex();
+
   }
   
   app-my-work{
@@ -20,7 +16,6 @@ app-why-me{
   
   app-references{
     @include dFlex();
-    min-width: 50vw;
   }
   
   app-contact-me{

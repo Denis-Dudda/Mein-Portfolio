@@ -17,6 +17,7 @@ import { NavComponent } from './shared/nav/nav.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
+  title = 'mein-portfolio';
   private isMouseDown = false; // Maus gedrückt?
   private startX = 0; // Mausstartposition X
   private scrollLeft = 0; // Startposition des Scrollens

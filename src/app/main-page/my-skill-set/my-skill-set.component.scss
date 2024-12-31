@@ -23,6 +23,11 @@ height: 400px;
  }
 }
 
+.arrow-skill{
+  position: relative;
+  top: 156px;
+}
+
 .skill-icon-grid{
 display: flex;
 flex-direction: column;
@@ -39,16 +44,11 @@ flex-direction: column;
     gap: 8px;
     color: white;
     img:hover{
-      box-shadow: 0 0 50px var(--primary-color);
+      box-shadow: 0 0 50px 10px var(--primary-color);
     }
   }
   >span{
     color: white;
     height: 60px;
   }
-}
-.arrow-right-container{
-  display: flex;
-  justify-content: end;
-  margin-right: 48px;
 }

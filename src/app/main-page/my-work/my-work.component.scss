@@ -10,6 +10,12 @@
   writing-mode: vertical-rl;
 }
 
+
+.arrow-work{
+  position: relative;
+  top: 108px;
+}
+
 .title-container{
   @include dFlex($g:16px);
   >p{

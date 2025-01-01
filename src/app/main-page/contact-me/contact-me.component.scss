@@ -4,6 +4,11 @@ section{
   @include dFlex($g:32px);
 }
 
+.arrow-contact{
+  position: relative;
+  top: 158px;
+}
+
 .contact-me-container{
   @include dFlex();
   >span{
@@ -25,6 +30,13 @@ form{
     width: 460px;
     background-color: black;
   }
+}
+textarea{
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+  height: 279px;
+  width: 460px;
+  background-color: black;
 }
 
 .impressum-container{

@@ -19,7 +19,8 @@
 
 .arrow-work{
   position: relative;
-  top: -26px;
+  right: 100px;
+  bottom: 30px;
 }
 
 .title-container{
@@ -38,6 +39,11 @@
     font-weight: bold;
     color: var(--primary-color);
   }
+}
+
+.ongoing-wrapper{
+  margin-top: 30px;
+  width: 361px;
 }
 
 .description-container{

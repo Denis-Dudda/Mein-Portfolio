@@ -64,3 +64,25 @@ section{
     opacity: 1;
   }
 }
+
+.notebook-icon-wrapper{
+  display: flex;
+  flex-direction: column;
+  .two-line-signal{
+    position: relative;
+    top: 13px;
+    right: 20px;
+  }
+  .one-line-signal{
+    position: relative;
+    top: 47px;
+    right: 23px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 1s ease;
+  }
+  &:hover .one-line-signal{
+    visibility: visible;
+    opacity: 1;
+  }
+}

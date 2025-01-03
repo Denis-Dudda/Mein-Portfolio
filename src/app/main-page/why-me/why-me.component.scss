@@ -38,24 +38,32 @@ section{
 }
 
 .icon-wrapper{
-  @include dFlex($g:88px);
+  @include dFlex($g:88px,$ai:flex-start);
   >div{
     @include dFlex($g:8px);
     flex-direction: column;
-    >img{
-      width: 40px;
-      height: 40px;
-    }
+  }
+  .location-icon,
+  .notebook-icon,
+  .laggage-case{
+    width: 40px;
+    height: 40px;
   }
 }
 
 .location-icon-wrapper{
   display: flex;
   flex-direction: column;
+  span{
+    transition: color 0.3s ease-in-out;
+  }
+  &:hover span{
+    color: var(--primary-color);
+  }
   .ellipse{
     visibility: hidden;
     position: relative;
-    bottom: 5px;
+    bottom: 40px;
     opacity: 0;
     transition: opacity 0.3s ease, visibility 1s ease;
   }
@@ -68,14 +76,20 @@ section{
 .notebook-icon-wrapper{
   display: flex;
   flex-direction: column;
+  span{
+    transition: color 0.3s ease-in-out;
+  }
+  &:hover span{
+    color: var(--primary-color);
+  }
   .two-line-signal{
     position: relative;
-    top: 13px;
+    bottom: 123px;
     right: 20px;
   }
   .one-line-signal{
     position: relative;
-    top: 47px;
+    bottom: 92px;
     right: 23px;
     visibility: hidden;
     opacity: 0;
@@ -84,5 +98,33 @@ section{
   &:hover .one-line-signal{
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.laggage-icon-wrapper{
+  display: flex;
+  flex-direction: column;
+  span{
+    transition: color 0.3s ease-in-out;
+  }
+  &:hover span{
+    color: var(--primary-color);
+  }
+  .laggage-handle{
+    position: relative;
+    bottom: 86px;
+    width: 30px;
+    height: 26px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .laggage-case{
+    z-index: 1;
+  }
+  .laggage-roll{
+    position: relative;
+    bottom: 76px;
+  }
+  &:hover .laggage-handle{
+    transform: translateY(-10px);
   }
 }

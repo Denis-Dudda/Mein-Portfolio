@@ -20,13 +20,15 @@ import { FooterComponent } from './shared/footer/footer.component';
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'mein-portfolio';
-  private velocity = 0; // Geschwindigkeit für Trägheitseffekt
-  private damping = 0.9; // Dämpfung der Geschwindigkeit
+  private scrollLeft = 0; // Aktuelle horizontale Scroll-Position
+  private velocity = 0; // Geschwindigkeit für Trägheit
+  private damping = 0.85; // Geringe Dämpfung für schnelleres Scrollen
+  private scrollFactor = 1.5; // Der Faktor für die Mausradgeschwindigkeit
   private animationFrame: number | null = null; // Für requestAnimationFrame
 
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
-      // Horizontales Scrollen mit Mausrad
+      // Scrollen mit Mausrad
       window.addEventListener('wheel', this.handleWheel, { passive: false });
 
       // Animation starten
@@ -49,34 +51,54 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   // Scrollen mit dem Mausrad
   private handleWheel = (event: WheelEvent) => {
     event.preventDefault();
-    const scrollAmount = event.deltaY < 0 ? -500 : 500; // Geschwindigkeit
-    window.scrollBy({
-      left: scrollAmount,
-      behavior: 'smooth'
+
+    // Berechne scrollAmount basierend auf deltaY
+    const scrollAmount = event.deltaY * this.scrollFactor;
+
+    // Setze die Geschwindigkeit sofort, ohne Verzögerung
+    this.velocity = scrollAmount;
+
+    // Berechne die maximale horizontale Scrollposition
+    const maxScrollLeft = document.documentElement.scrollWidth - window.innerWidth;
+
+    // Aktualisiere scrollLeft, wobei wir sicherstellen, dass wir die Grenzen nicht überschreiten
+    this.scrollLeft = Math.min(Math.max(0, this.scrollLeft + this.velocity), maxScrollLeft);
+
+    // Scrollen basierend auf der neuen Position
+    window.scrollTo({
+      left: this.scrollLeft,
+      behavior: 'smooth',
     });
   };
 
   // Smoothes Scrollen mit Trägheitseffekt
   private startSmoothScroll = () => {
     const smoothScroll = () => {
-      if (Math.abs(this.velocity) > 0.5) {
-        // Scrollen nur, wenn Geschwindigkeit signifikant ist
-        window.scrollBy({
-          left: this.velocity,
-          behavior: 'auto'
+      // Wenn Geschwindigkeit ausreichend hoch ist, scrollen
+      if (Math.abs(this.velocity) > 0.2) { // Niedrigere Schwelle, um sofort zu reagieren
+        this.scrollLeft += this.velocity;
+
+        // Berechne die maximale horizontale Scrollposition
+        const maxScrollLeft = document.documentElement.scrollWidth - window.innerWidth;
+
+        // Beschränke scrollLeft innerhalb der erlaubten Grenzen
+        this.scrollLeft = Math.min(Math.max(0, this.scrollLeft), maxScrollLeft);
+
+        window.scrollTo({
+          left: this.scrollLeft,
+          behavior: 'smooth',
         });
 
-        // Geschwindigkeit dämpfen
+        // Dämpfung anpassen
         this.velocity *= this.damping;
       } else {
-        this.velocity = 0; // Geschwindigkeit auf 0 setzen
+        this.velocity = 0; // Stoppe, wenn Geschwindigkeit niedrig genug ist
       }
 
-      // Animation fortsetzen
+      // Weiter mit der Animation
       this.animationFrame = requestAnimationFrame(smoothScroll);
     };
 
-    // Starten der Animation
     smoothScroll();
   };
 }

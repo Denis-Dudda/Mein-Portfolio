@@ -1,7 +1,44 @@
-div{
+@import '../../../styles.scss';
+
+.social-icon-wrapper{
   position: fixed;
-  right: 16px;
+  right: 40px;
   top: 16px;
   display: flex;
   gap: 16px;
+}
+
+.icons{
+@include dFlex($g:16px);
+}
+
+.single-icon{
+  transition: filter 0.3s ease-in-out;
+  &:hover{
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(69%) saturate(1578%) hue-rotate(12deg) brightness(91%) contrast(91%);
+  }
+}
+
+.language{
+  @include dFlex($g:8px);
+  color: white;
+  .vertical-border{
+    border-left: 3px solid white;
+    height: 18px;
+  }
+  .DE,
+  .EN{
+    transition: color 0.2s ease-in-out;
+  }
+}
+
+.DE:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.EN:hover{
+  color: var(--primary-color);
+  cursor: pointer;
 }

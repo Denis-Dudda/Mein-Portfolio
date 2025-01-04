@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })

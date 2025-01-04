@@ -7,6 +7,10 @@ section{
 .arrow-contact{
   position: relative;
   top: 158px;
+  transition: transform 0.3s ease;
+  &:hover{
+    @include aGlow();
+  }
 }
 
 .contact-me-container{
@@ -54,6 +58,10 @@ textarea{
   }
   img{
     rotate: 180deg;
+    transition: transform 0.3s ease;
+    &:hover{
+      @include aGlow();
+    }
   }
   >div{
     @include dFlex($g:8px);

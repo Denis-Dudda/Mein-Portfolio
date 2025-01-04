@@ -21,6 +21,10 @@
   position: relative;
   right: 100px;
   bottom: 30px;
+  transition: transform 0.3s ease;
+  &:hover{
+    @include aGlow();
+  }
 }
 
 .title-container{

@@ -27,6 +27,11 @@
   .contant-wrapper{
     display: flex;
     flex-direction: row;
+    
+  }
+
+  @mixin aGlow(){
+    filter: drop-shadow(0 0 20px var(--primary-color));
   }
   
   @mixin dFlex($jc:center,$ai:center,$g:0px){

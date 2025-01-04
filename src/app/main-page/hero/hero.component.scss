@@ -22,7 +22,13 @@ section{
 .arrow-right{
   height: 50px;
   width: 107px;
+  transition: transform 0.3s ease;
+  &:hover{
+    @include aGlow();
+  }
 }
+
+
 
 div{
   @include dFlex();

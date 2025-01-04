@@ -12,6 +12,10 @@ section{
 .arrow-references{
   position: relative;
   top: 375px;
+  transition: transform 0.3s ease;
+  &:hover{
+    @include aGlow();
+  }
 }
 
 .ref-title-container{

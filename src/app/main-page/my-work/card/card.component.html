@@ -6,28 +6,28 @@
     </div>
     <div class="about-projekt-container">
         <ul>
-          <li>About the Projekt</li>
+          <li>{{'WORK.about' | translate}}</li>
         </ul>
-        <span>{{work?.aboutTheProjekt}}</span>
+        <span>{{ work?.aboutTheProjekt ?? 'Default Text' | translate }}</span>
     </div>
     <div class="technologies-container">
       <ul>
-        <li>Technologies i have used</li>
+        <li>{{'WORK.tech' | translate}}</li>
       </ul>
-      <span>{{work?.technologies}}</span>
+      <span>{{work?.technologies ?? 'Default Text' | translate}}</span>
     </div>
     <div class="description-container">
       <ul>
-        <li>What i have learned</li>
+        <li>{{'WORK.learned' | translate}}</li>
       </ul>
-      <span>{{work?.description}}</span>
+      <span>{{work?.description ?? 'Default Text' | translate}}</span>
     </div>
   </div>
   <div class="projekt-img-container">
       <img style="width: 180px; height: 180px;" src="/img/Photo.svg" alt="">
       <div>
         <button class="transparent-button">GitHub</button>
-        <button class="color-button">Live Test</button>
+        <button class="color-button">{{'WORK.live' | translate}}</button>
       </div>
     </div>
 </section>

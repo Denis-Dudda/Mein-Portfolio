@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface Work {
   projektNumber: string;
@@ -12,7 +13,7 @@ export interface Work {
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

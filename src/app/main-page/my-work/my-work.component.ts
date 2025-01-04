@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from './card/card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-my-work',
   standalone: true,
-  imports: [CommonModule,CardComponent],
+  imports: [CommonModule,CardComponent,TranslateModule],
   templateUrl: './my-work.component.html',
   styleUrl: './my-work.component.scss'
 })
@@ -15,23 +16,23 @@ export class MyWorkComponent {
     {
       projektNumber: '1',
       projektName: 'Join',
-      aboutTheProjekt: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
-      technologies: 'JavaScript,HTML,CSS,Firebase',
-      description: 'OR my group-projects experience'
+      aboutTheProjekt: 'WORK.about_description_project_1',
+      technologies: 'WORK.tech-description_project_1',
+      description: 'WORK.learned_description_project_1'
     },
     {
       projektNumber: '2',
       projektName: 'El Pollo Loco',
-      aboutTheProjekt: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      technologies: 'JavaScript,HTML,CSS,Firebase',
-      description: 'wurst mit dosenkohl'
+      aboutTheProjekt: 'WORK.about_description_project_2',
+      technologies: 'WORK.tech-description_project_2',
+      description: 'WORK.learned_description_project_2'
     },    
     {
       projektNumber: '3',
       projektName: 'Da Bubble',
-      aboutTheProjekt: 'Posuere pretium arcu sed senectus felis ac mauris.  Dui eget dictum.osuere pretium arcu sed senectus felis ac mauris. h',
-      technologies: 'Angular,TypeScript,JavaScript,HTML,CSS,Firebase',
-      description: 'bla bla bla'
+      aboutTheProjekt: 'WORK.about_description_project_3',
+      technologies: 'WORK.tech-description_project_3',
+      description: 'WORK.learned_description_project_3'
     },
   ];
 }

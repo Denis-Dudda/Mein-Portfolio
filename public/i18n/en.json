@@ -19,5 +19,24 @@
         "description": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
         "challenge": "Challenge me",
         "new_tech": "I am always happy to learn new technologies, just tell me what you need."
+    },
+    "WORK":{
+        "my_work": "My Work",
+        "about": "About the Project",
+        "about_description_project_1": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "about_description_project_2": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "about_description_project_3": "Posuere pretium arcu sed senectus felis ac mauris.  Dui eget dictum.osuere pretium arcu sed senectus felis ac mauris. h",
+        "tech": "Technologies i have used",
+        "tech-description_project_1": "JavaScript,HTML,CSS,Firebase",
+        "tech-description_project_2": "JavaScript,HTML,CSS,Firebase",
+        "tech-description_project_3": "Angular,TypeScript,JavaScript,HTML,CSS,Firebase",
+        "learned": "What i have learned",
+        "learned_description_project_1": "OR my group-projects experience",
+        "learned_description_project_2": "drinking sausage water",
+        "learned_description_project_3": "nothing until now",
+        "live": "Live",
+        "ongoing": "Ongoing Project",
+        "ongoing_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic reprehenderit praesentium mollitia aperiam veritatis sequi, atque repellat rerum optio voluptatem similique delectus odio fugiat quaerat tempore eius quae nostrum cupiditate.",
+        "lets_talk": "Let s Talk"
     }
 }

@@ -9,6 +9,7 @@ import { NavComponent } from '../shared/nav/nav.component';
 import { HeroComponent } from './hero/hero.component';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-page',

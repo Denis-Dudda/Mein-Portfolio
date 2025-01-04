@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-social-icons',
   standalone: true,
@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class SocialIconsComponent {
 
+  constructor(private translate: TranslateService) { }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);  
+  }
 }

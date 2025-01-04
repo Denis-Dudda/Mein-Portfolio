@@ -44,5 +44,12 @@
         "description_card_1": "Michael ist eine zuverlässige und freundliche Person. Arbeitet strukturiert und schreibt klaren Code. Ich empfehle ihn als Kollegen.",
         "description_card_2": "Er ist ein vertrauenswürdiger Teamplayer und kann den Stress von Deadlines bewältigen. Strukturierte Arbeit und klarer Code.",
         "description_card_3": "Michael musste in Zusammenarbeit mit den Teammitgliedern Inhalte entwickeln, formatieren und liefern. Er ist eine zuverlässige und freundliche Person."
-    }
+    },
+    "CONTACT": {
+        "contact_me": "Kontaktiere mich",
+        "let_us": "Lass uns zusammenarbeiten",
+        "description": "Ob dein Projekt die Entwicklung einer neuen Anwendung, die Aktualisierung bestehender Systeme oder die Implementierung robuster Cybersicherheitsmaßnahmen umfasst, ich besitze die technische Kompetenz und Problemlösungsfähigkeiten, um erfolgreiche Ergebnisse sicherzustellen.",
+        "legal_notice": "Rechtshinweis",
+        "policy": "Datenschutzrichtlinie"
+}
 }

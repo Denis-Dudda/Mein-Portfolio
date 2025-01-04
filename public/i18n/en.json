@@ -44,5 +44,12 @@
         "description_card_1": "Michael is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.",
         "description_card_2": "He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.",
         "description_card_3": "Michael had to develop, format and deliver content in collaboration with the team members.He is a reliable and friendly person."
+    },
+    "CONTACT":{
+        "contact_me": "Contact me",
+        "let_us": "Let us work together",
+        "description": "Whether your project involves developing a new application, upgrading existing systems, or implementing robust cybersecurity measures, I have the technical acumen and problem-solving skills to ensure successful outcomes.",
+        "legal_notice": "Legal noctice",
+        "policy": "Privacy policy"
     }
 }

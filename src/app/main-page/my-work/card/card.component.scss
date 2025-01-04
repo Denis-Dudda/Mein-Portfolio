@@ -51,12 +51,29 @@ section{
 flex-direction: column;
 >div{
   display: flex;
-  >button{
+  gap: 16px;
+  .transparent-button{
+  border-radius: 30px;
+  width: 135px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+   &:hover{
+    background-color: #B5E93B33;
+    border: 1px solid ;
+   }    
+  }
+  .color-button{
   border-radius: 30px;
   width: 135px;
   height: 44px;
   background-color: var(--primary-color);
   border: none;
+    &:hover{
+      background: linear-gradient(160deg, #B5E93B, #547800);
+      cursor: pointer;
+    }
   }
 }
 }

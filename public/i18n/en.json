@@ -13,5 +13,11 @@
         "remote": "Open to work remote",
         "relocate": "Open to relocate",
         "contact_me": "Contact me" 
+    },
+    "SKILLS":{
+        "my_skills": "My Skill Set",
+        "description": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
+        "challenge": "Challenge me",
+        "new_tech": "I am always happy to learn new technologies, just tell me what you need."
     }
 }

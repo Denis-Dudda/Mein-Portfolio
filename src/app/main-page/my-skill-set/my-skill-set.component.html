@@ -2,9 +2,9 @@
   <a class="arrow-skill" href="#skills">
     <img class="arrow-right" src="/img/Arrow 7.svg" alt="">
   </a>
-  <span>My Skill Set</span> 
+  <span>{{'SKILLS.my_skills' | translate}}</span> 
   <div>
-    <span>The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.</span>
+    <span>{{'SKILLS.description' | translate}}</span>
     <div class="grid-wrapper">
       <div *ngFor="let icon of icons">
         <div class="icon-wrapper">
@@ -12,8 +12,7 @@
         </div>
           <span>{{icon.property}}</span>
       </div>
-      <span>I am always happy to learn new technologies,
-        just tell me what you need.</span>
+      <span>{{'SKILLS.new_tech' | translate}}</span>
     </div>
   </div>
 </section>

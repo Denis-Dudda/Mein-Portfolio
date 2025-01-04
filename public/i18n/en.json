@@ -6,6 +6,12 @@
         "contact": "Contact"
     },
     "WHY_ME": {
-        "description": "I am motivated to continuously learn new technologies and develop myself. My ability to solve complex problems and my passion for programming make me a valuable member of your team." 
+        "why_me": "Why me",
+        "description": "I am motivated to continuously learn new technologies and develop myself. My ability to solve complex problems and my passion for programming make me a valuable member of your team.",
+        "i_am": "i am",
+        "location" : "Located in Bischofswiesen",
+        "remote": "Open to work remote",
+        "relocate": "Open to relocate",
+        "contact_me": "Contact me" 
     }
 }

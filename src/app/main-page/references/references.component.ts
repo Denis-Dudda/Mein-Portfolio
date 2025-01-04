@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RefCardsComponent } from './ref-cards/ref-cards.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -8,7 +9,7 @@ import { RefCardsComponent } from './ref-cards/ref-cards.component';
 @Component({
   selector: 'app-references',
   standalone: true,
-  imports: [CommonModule,RefCardsComponent],
+  imports: [CommonModule,RefCardsComponent,TranslateModule],
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
@@ -17,22 +18,19 @@ export class ReferencesComponent {
 
   refCards = [
     {
-      description:'Michael is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.',
+      description:'REF.description_card_1',
       fullName: 'James Rugman',
       projekt: 'Join'
     },
     {
-      description:' He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code. ',
+      description:'REF.description_card_2',
       fullName: 'Evelyn Marx',
       projekt: 'Da Bubble'
     },
     {
-      description:'Michael had to develop, format and deliver content in collaboration with the team members.He is a reliable and friendly person.',
+      description:'REF.description_card_3',
       fullName: 'Noah Mueller',
       projekt: 'El pollo'
     }
   ];
-  ngOnInit(){
-    console.log(this.refCards); // Überprüfe die Daten im Parent
-  }
 }

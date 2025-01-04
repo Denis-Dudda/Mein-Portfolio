@@ -38,5 +38,11 @@
         "ongoing": "Ongoing Project",
         "ongoing_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic reprehenderit praesentium mollitia aperiam veritatis sequi, atque repellat rerum optio voluptatem similique delectus odio fugiat quaerat tempore eius quae nostrum cupiditate.",
         "lets_talk": "Let s Talk"
+    },
+    "REF":{
+        "references": "References",
+        "description_card_1": "Michael is a reliable and friendly person. Work in a structured way and write a clear code. I recommend him as a colleague.",
+        "description_card_2": "He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.",
+        "description_card_3": "Michael had to develop, format and deliver content in collaboration with the team members.He is a reliable and friendly person."
     }
 }

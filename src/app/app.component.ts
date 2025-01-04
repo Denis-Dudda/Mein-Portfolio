@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { TranslateModule } from '@ngx-translate/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     RouterOutlet,
     MainPageComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    TranslateModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -26,6 +29,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private scrollFactor = 1.5; // Der Faktor für die Mausradgeschwindigkeit
   private animationFrame: number | null = null; // Für requestAnimationFrame
 
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       // Scrollen mit Mausrad

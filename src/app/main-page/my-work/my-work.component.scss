@@ -11,10 +11,12 @@
   background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
   transform: rotate(180deg);
   writing-mode: vertical-rl;
+  animation: fade-in-normal 1s ease-in-out 0s 1 normal none; 
 }
 
 .card-wrapper{
   display: flex;
+  animation: fade-in-normal 1s ease-in-out 0s 1 normal none; 
 }
 
 .arrow-work{

@@ -1,4 +1,4 @@
-@font-face {
+  @font-face {
     font-family: 'Quantico';
     src: url(../public/fonts/Quantico-Bold.ttf),
          url(../public/fonts/Quantico-BoldItalic.ttf),
@@ -45,4 +45,36 @@
     --primary-color:rgb(181,233,59);
     --text-color: white;
   }
+
+  @keyframes fade-in-bottom-normal {
+    0% { 
+      transform: translateY(50px);
+      opacity: 0;
+    } 
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    } 
+  } 
+  
+  @keyframes fade-in-top-normal {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    } 
+    100% { 
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-normal {
+    0% { 
+      opacity: 0;
+    } 
+     100% { 
+      opacity: 1;
+    }
+  }
+
   

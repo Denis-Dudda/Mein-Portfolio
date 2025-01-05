@@ -4,18 +4,18 @@
   </a>
   <div class="contact-me-container">
     <span>{{'CONTACT.contact_me' | translate}}</span>
-    <form action="/submit" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+    <form >
+      
+      <input class="name-mail" type="text" id="name" name="name" placeholder="Your name" required><br><br>
     
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+      
+      <input class="name-mail" type="email" id="email" name="email" placeholder="Your e-mail" required><br><br>
     
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="4" required></textarea><br><br>
+      <br>
+      <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea><br><br>
     
       <input type="checkbox" id="policy" name="policy" required>
-      <label for="policy">I accept the Privacy Policy</label><br><br>
+      <label for="policy">I've read the</label><a href="">Privacy policy</a><br><br>
     
       <button type="submit">Submit</button>
     </form>

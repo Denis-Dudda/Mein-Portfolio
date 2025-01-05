@@ -6,7 +6,9 @@
     <h2>{{'REF.references' | translate}}</h2>
   </div>
   <div>
-    <app-ref-cards *ngFor="let card of refCards" [card]="card"></app-ref-cards>
+    <app-ref-cards 
+  *ngFor="let card of refCards; let i = index" [card]="card" [style.animationDelay]="i * 0.6 + 's'">
+</app-ref-cards>
   </div>
 
   </section>

@@ -64,4 +64,8 @@ button{
   height: 44px;
   background-color: var(--primary-color);
   border: none;
+  &:hover{
+    cursor: pointer;
+    background: linear-gradient(160deg, #B5E93B, #547800);
+  }
 }

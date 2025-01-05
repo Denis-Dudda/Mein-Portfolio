@@ -20,7 +20,7 @@ section{
 
 .ref-title-container{
   height: 100%;
-  
+  animation: fade-in-top-normal 1s ease-in-out 0s 1 normal none;
 }
 
 h2{
@@ -41,4 +41,6 @@ app-ref-cards{
   border: 1px solid;
   border-color: var(--primary-color);
   padding: 16px;
+  opacity: 0;
+  animation: fade-in-top-normal 1s ease-in-out forwards;
 }

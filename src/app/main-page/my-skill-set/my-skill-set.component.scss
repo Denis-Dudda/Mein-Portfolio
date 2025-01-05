@@ -4,7 +4,7 @@ section{
 @include dFlex();
 width: 980px;
 height: 400px; 
-animation: fade-in-bottom-normal 1s ease-in-out 0s 1 normal none;
+animation: fade-in-bottom-normal 1s ease-in-out;
  >span{
   font-size: 64px;
   font-weight: bold;
@@ -73,7 +73,7 @@ flex-direction: column;
 
 .icon-container {
   opacity: 0; /* Standardmäßig unsichtbar */
-  animation: fade-in-bottom-normal 0.5s ease-in-out forwards;
+  animation: fade-in-bottom-normal 0.5s ease-in-out 1s forwards;
 }
 
 

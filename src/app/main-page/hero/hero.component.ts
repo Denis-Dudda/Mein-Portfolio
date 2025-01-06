@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-
+  scrollToSection(event: MouseEvent) {
+    event.preventDefault();  // Verhindert das Neuladen der Seite
+    
+    const target = document.getElementById('why-me');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+    }
+  }
 }

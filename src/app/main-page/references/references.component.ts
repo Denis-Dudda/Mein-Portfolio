@@ -33,4 +33,13 @@ export class ReferencesComponent {
       projekt: 'El pollo'
     }
   ];
+
+  scrollToSection(event: MouseEvent) {
+    event.preventDefault();  // Verhindert das Neuladen der Seite
+    
+    const target = document.getElementById('references');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+    }
+  }
 }

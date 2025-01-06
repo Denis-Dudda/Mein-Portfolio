@@ -27,4 +27,13 @@ export class MySkillSetComponent {
     { src: './icons/Property 10.svg', label: 'Icon 10', property: 'Material design' },
     { src: './icons/Property 11.svg', label: 'Icon 11', property: 'Challenge me' }
   ];
+
+  scrollToSection(event: MouseEvent) {
+    event.preventDefault();  // Verhindert das Neuladen der Seite
+    
+    const target = document.getElementById('skills');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+    }
+  }
 }

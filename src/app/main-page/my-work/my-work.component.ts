@@ -35,4 +35,13 @@ export class MyWorkComponent {
       description: 'WORK.learned_description_project_3'
     },
   ];
+
+  scrollToSection(event: MouseEvent) {
+    event.preventDefault();  // Verhindert das Neuladen der Seite
+    
+    const target = document.getElementById('my-work');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+    }
+  }
 }

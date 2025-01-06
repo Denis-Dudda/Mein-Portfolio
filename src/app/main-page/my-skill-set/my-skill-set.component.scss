@@ -33,7 +33,8 @@ animation: fade-in-bottom-normal 1s ease-in-out;
 }
 
 .arrow-skill:hover {
-  @include aGlow(); 
+  @include aGlow();
+  cursor: pointer; 
 }
 
 .skill-icon-grid{

@@ -15,6 +15,7 @@ section{
   transition: transform 0.3s ease;
   &:hover{
     @include aGlow();
+    cursor: pointer;
   }
 }
 

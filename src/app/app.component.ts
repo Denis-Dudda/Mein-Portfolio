@@ -67,7 +67,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     // Wenn der Zeitpunkt mehr als 1000 ms (1 Sekunde) seit dem letzten Scroll-Ereignis vergangen ist,
     // dann wird das Scrollen verarbeitet
-    if (now - this.lastScrollTime > 250) {
+    if (now - this.lastScrollTime > 400) {
       this.lastScrollTime = now; // Zeitpunkt des letzten Scroll-Ereignisses speichern
 
       // Berechne scrollAmount basierend auf deltaY

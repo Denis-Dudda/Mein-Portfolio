@@ -15,11 +15,12 @@ animation: fade-in-bottom-normal 1s ease-in-out;
   writing-mode: vertical-rl;
  }
  >div{
-  @include dFlex($ai:stretch, $g:140px);
+  @include dFlex();
   flex-direction: column;
   height: 400px;
   >span{
     color: white;
+    padding-left: 40px;
   }
  }
 }
@@ -42,34 +43,33 @@ flex-direction: column;
 
 .grid-wrapper{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 32px;
+  align-items: flex-end;
+  grid-template-columns: 120px 120px 120px 120px 120px 120px ;
+  grid-template-rows: 150px 150px;
+  gap: 8px;
   >div{
     @include dFlex();
     flex-direction: column;
-    gap: 8px;
+    gap: 21px;
     color: white;
     text-align: center;
   }
   span{
     color: white;
-    height: 60px;
-    margin-top: 20px;
+  }
+  img{
+    transition: transform 0.3s ease;
+    &:hover{
+      @include aGlow();
+    }
+  }
+  .icon-description {
+    width: 200px;
+    @include dFlex();
+    opacity: 0; /* Unsichtbar zu Beginn */
+    animation: fade-in-bottom-normal 0.5s ease-in-out forwards;
   }
 }
-
-.icon-wrapper{
-  display: flex;
-  width: 0px;
-  height: 0px;
-  justify-content: center;
-  align-items: center;
-      &:hover{
-      box-shadow: 0 0 50px 20px var(--primary-color);
-    }
-}
-
 
 .icon-container {
   opacity: 0; /* Standardmäßig unsichtbar */

@@ -5,7 +5,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -26,14 +26,16 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private scrollLeft = 0; // Aktuelle horizontale Scroll-Position
   private velocity = 0; // Geschwindigkeit für Trägheit
   private damping = 0.85; // Geringe Dämpfung für schnelleres Scrollen
-  private scrollFactor = 1.5; // Der Faktor für die Mausradgeschwindigkeit
+  private scrollFactor = 1.1; // Der Faktor für die Mausradgeschwindigkeit
   private animationFrame: number | null = null; // Für requestAnimationFrame
+  private lastScrollTime = 0; // Zeitstempel für das letzte Scroll-Ereignis (zum Throttlen)
 
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
+
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
       // Scrollen mit Mausrad
@@ -56,27 +58,36 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  // Scrollen mit dem Mausrad
+  // Scrollen mit dem Mausrad (mit Throttling)
   private handleWheel = (event: WheelEvent) => {
     event.preventDefault();
 
-    // Berechne scrollAmount basierend auf deltaY
-    const scrollAmount = event.deltaY * this.scrollFactor;
+    // Den aktuellen Zeitpunkt ermitteln
+    const now = Date.now();
 
-    // Setze die Geschwindigkeit sofort, ohne Verzögerung
-    this.velocity = scrollAmount;
+    // Wenn der Zeitpunkt mehr als 1000 ms (1 Sekunde) seit dem letzten Scroll-Ereignis vergangen ist,
+    // dann wird das Scrollen verarbeitet
+    if (now - this.lastScrollTime > 250) {
+      this.lastScrollTime = now; // Zeitpunkt des letzten Scroll-Ereignisses speichern
 
-    // Berechne die maximale horizontale Scrollposition
-    const maxScrollLeft = document.documentElement.scrollWidth - window.innerWidth;
+      // Berechne scrollAmount basierend auf deltaY
+      const scrollAmount = event.deltaY * this.scrollFactor;
 
-    // Aktualisiere scrollLeft, wobei wir sicherstellen, dass wir die Grenzen nicht überschreiten
-    this.scrollLeft = Math.min(Math.max(0, this.scrollLeft + this.velocity), maxScrollLeft);
+      // Setze die Geschwindigkeit sofort, ohne Verzögerung
+      this.velocity = scrollAmount;
 
-    // Scrollen basierend auf der neuen Position
-    window.scrollTo({
-      left: this.scrollLeft,
-      behavior: 'smooth',
-    });
+      // Berechne die maximale horizontale Scrollposition
+      const maxScrollLeft = document.documentElement.scrollWidth - window.innerWidth;
+
+      // Aktualisiere scrollLeft, wobei wir sicherstellen, dass wir die Grenzen nicht überschreiten
+      this.scrollLeft = Math.min(Math.max(0, this.scrollLeft + this.velocity), maxScrollLeft);
+
+      // Scrollen basierend auf der neuen Position
+      window.scrollTo({
+        left: this.scrollLeft,
+        behavior: 'smooth',
+      });
+    }
   };
 
   // Smoothes Scrollen mit Trägheitseffekt

@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   private lastScrollTime = 0; // Der Zeitpunkt des letzten Scroll-Ereignisses
   private scrollThrottleDelay = 200; // Verzögerung in Millisekunden, um schnelle Scroll-Ereignisse zu drosseln
-  private scrollFactor = 5; // Der Faktor für die Scroll-Geschwindigkeit (je höher, desto schneller)
+  private scrollFactor = 8; // Der Faktor für die Scroll-Geschwindigkeit (je höher, desto schneller)
  
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);

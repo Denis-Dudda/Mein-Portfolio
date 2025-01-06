@@ -8,12 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-  scrollToSection(event: MouseEvent) {
-    event.preventDefault();  // Verhindert das Neuladen der Seite
-    
-    const target = document.getElementById('why-me');
+  scrollToSection(event: MouseEvent, targetId: string) {
+    event.preventDefault();
+    const target = document.getElementById(targetId);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+      const navWidth = 172;  
+      window.scrollTo({
+        left: target.offsetLeft - navWidth, 
+        behavior: 'smooth'       
+      });
     }
   }
 }

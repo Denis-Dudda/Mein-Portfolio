@@ -36,12 +36,16 @@ export class MyWorkComponent {
     },
   ];
 
-  scrollToSection(event: MouseEvent) {
-    event.preventDefault();  // Verhindert das Neuladen der Seite
-    
-    const target = document.getElementById('my-work');
+  scrollToSection(event: MouseEvent, targetId: string) {
+    event.preventDefault();
+    const target = document.getElementById(targetId);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+      const navWidth = 172;  
+      window.scrollTo({
+        left: target.offsetLeft - navWidth, 
+        behavior: 'smooth'       
+      });
     }
   }
 }

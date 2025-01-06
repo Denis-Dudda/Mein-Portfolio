@@ -28,12 +28,16 @@ export class MySkillSetComponent {
     { src: './icons/Property 11.svg', label: 'Icon 11', property: 'Challenge me' }
   ];
 
-  scrollToSection(event: MouseEvent) {
-    event.preventDefault();  // Verhindert das Neuladen der Seite
-    
-    const target = document.getElementById('skills');
+  scrollToSection(event: MouseEvent, targetId: string) {
+    event.preventDefault();
+    const target = document.getElementById(targetId);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' }); // Scrollt zum Ziel
+      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+      const navWidth = 172;  
+      window.scrollTo({
+        left: target.offsetLeft - navWidth, 
+        behavior: 'smooth'       
+      });
     }
   }
 }

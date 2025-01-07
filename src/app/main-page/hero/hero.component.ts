@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimationService } from '../../services/animation.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,17 +8,16 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
+
+
 export class HeroComponent {
-  scrollToSection(event: MouseEvent, targetId: string) {
-    event.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-      const navWidth = 172;  
-      window.scrollTo({
-        left: target.offsetLeft - navWidth, 
-        behavior: 'smooth'       
-      });
-    }
+
+  constructor (private animationService: AnimationService) {
   }
+
+  scroll(event: MouseEvent, targetId: string): void {
+    event.preventDefault();
+    this.animationService.scrollToSection(event, targetId);
+  }
+
 }

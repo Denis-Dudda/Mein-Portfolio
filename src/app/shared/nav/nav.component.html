@@ -1,10 +1,10 @@
 <section>
   <nav>
-    <a (click)="scrollToSection($event, 'contact')">{{'NAV.contact' | translate}}</a>
-    <a (click)="scrollToSection($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
-    <a (click)="scrollToSection($event, 'skills')">{{'NAV.skills' | translate}}</a>
-    <a (click)="scrollToSection($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
-    <a class="nav-img-container"  (click)="scrollToSection($event, 'home')">
+    <a (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
+    <a (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
+    <a (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
+    <a (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
+    <a class="nav-img-container"  (click)="scroll($event, 'home')">
       <img src="./img/DD.jpg" alt="">
     </a>
   

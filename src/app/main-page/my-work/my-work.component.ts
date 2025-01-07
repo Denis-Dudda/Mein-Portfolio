@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { AnimationService } from '../../services/animation.service';
 
 interface Work {
   projektNumber: string;
@@ -51,16 +52,11 @@ export class MyWorkComponent {
     },
   ];
 
-  scrollToSection(event: MouseEvent, targetId: string) {
+  constructor (private animationService: AnimationService) {
+  }
+
+  scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-      const navWidth = 172;  
-      window.scrollTo({
-        left: target.offsetLeft - navWidth, 
-        behavior: 'smooth'       
-      });
-    }
+    this.animationService.scrollToSection(event, targetId);
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { AnimationService } from '../../services/animation.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,16 +10,11 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent { 
-  scrollToSection(event: MouseEvent, targetId: string) {
+  constructor (private animationService: AnimationService) {
+  }
+
+  scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-      const navWidth = 172;  
-      window.scrollTo({
-        left: target.offsetLeft - navWidth, 
-        behavior: 'smooth'       
-      });
-    }
+    this.animationService.scrollToSection(event, targetId);
   }
 }

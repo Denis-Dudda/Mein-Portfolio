@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { AnimationService } from '../../services/animation.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -18,13 +19,11 @@ export class ContactMeComponent {
     
   }
   
-  scrollToSection(event: MouseEvent, targetId: string) {
-    event.preventDefault();  // Verhindert das Neuladen der Seite
-  
-    // Hier wird die Ziel-ID dynamisch übergeben
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });  // Scrollt sanft zum Ziel
-    }
+  constructor (private animationService: AnimationService) {
+  }
+
+  scroll(event: MouseEvent, targetId: string): void {
+    event.preventDefault();
+    this.animationService.scrollToSection(event, targetId);
   }
 }

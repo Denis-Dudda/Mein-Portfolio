@@ -4,7 +4,13 @@ section{
 @include dFlex();
 width: 980px;
 height: 400px; 
-animation: fade-in-bottom-normal 1s ease-in-out;
+opacity: 0;  // Standardmäßig unsichtbar
+transform: translateY(20px);  // Startposition für die Animation
+transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
+&.visible {  // Wenn sichtbar, wird die Animation aktiviert
+  opacity: 1;
+  transform: translateY(0);
+}
  >span{
   font-size: 64px;
   font-weight: bold;

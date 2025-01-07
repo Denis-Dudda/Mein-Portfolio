@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
 
@@ -13,7 +13,9 @@ import { AnimationService } from '../../services/animation.service';
   templateUrl: './my-skill-set.component.html',
   styleUrl: './my-skill-set.component.scss'
 })
-export class MySkillSetComponent {
+export class MySkillSetComponent implements AfterViewInit{
+
+  @ViewChild('skill') skill!: ElementRef;  // Hier referenzieren wir das Element, das beobachtet werden soll
 
   icons = [
     { src: './icons/Property 1.svg', label: 'Icon 1', property: 'Angular' },
@@ -37,4 +39,12 @@ export class MySkillSetComponent {
     this.animationService.scrollToSection(event, targetId);
   }
 
+  ngAfterViewInit(): void {
+    if (this.skill) {
+      this.animationService.observeElement(this.skill.nativeElement);
+      console.log('da');
+      
+      
+    }
+  }
 }

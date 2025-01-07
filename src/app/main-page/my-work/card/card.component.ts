@@ -19,4 +19,10 @@ export interface Work {
 })
 export class CardComponent {
   @Input() work?: Work;
+  
+  navigateTo(url: string): void {
+    if (url) {
+      window.open(url, '_blank'); // öffnet den Link in einem neuen Tab
+    }
+  }
 }

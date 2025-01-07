@@ -26,8 +26,8 @@
   <div class="projekt-img-container">
       <img style="width: 180px; height: 180px;" src="./img/Photo.svg" alt="">
       <div>
-        <button class="transparent-button">GitHub</button>
-        <button class="color-button">{{'WORK.live' | translate}}</button>
+        <button class="transparent-button" (click)="navigateTo(work?.githubUrl)">GitHub</button>
+        <button class="color-button" (click)="navigateTo(work?.liveDemoUrl)">{{'WORK.live' | translate}}</button>
       </div>
     </div>
 </section>

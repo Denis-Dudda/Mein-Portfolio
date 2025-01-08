@@ -41,10 +41,7 @@ export class MySkillSetComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     if (this.skill) {
-      this.animationService.observeElement(this.skill.nativeElement);
-      console.log('da');
-      
-      
+      this.animationService.observeElement(this.skill.nativeElement); 
     }
   }
 }

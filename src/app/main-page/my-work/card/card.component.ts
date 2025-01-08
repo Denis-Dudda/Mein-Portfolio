@@ -22,7 +22,7 @@ export class CardComponent {
   
   navigateTo(url: string): void {
     if (url) {
-      window.open(url, '_blank'); // öffnet den Link in einem neuen Tab
+      window.open(url, '_blank'); 
     }
   }
 }

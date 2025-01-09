@@ -16,7 +16,14 @@
 
 .card-wrapper{
   display: flex;
-  animation: fade-in-normal 1s ease-in-out 0s 1 normal none; 
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  &.visible{
+    opacity: 1;
+    transform: translateY(0);
+    
+  }
 }
 
 .arrow-work{

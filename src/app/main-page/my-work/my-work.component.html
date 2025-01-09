@@ -1,7 +1,7 @@
 <a class="arrow-work" (click)="scroll($event, 'my-work')">
     <img src="./img/Arrow 7.svg" alt="">
 </a>
-<div class="card-wrapper">
+<div #card class="card-wrapper">
 <span class="my-work">{{'WORK.my_work' | translate}}</span>
 <app-card *ngFor="let work of works" [work]="work"></app-card>
 <div class="ongoing-wrapper">

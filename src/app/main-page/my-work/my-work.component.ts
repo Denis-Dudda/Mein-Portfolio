@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
@@ -21,7 +21,10 @@ interface Work {
   templateUrl: './my-work.component.html',
   styleUrl: './my-work.component.scss'
 })
-export class MyWorkComponent {
+export class MyWorkComponent implements AfterViewInit{
+
+  @ViewChild('card') card!: ElementRef;
+
   works = [
     {
       projektNumber: '1',
@@ -58,5 +61,11 @@ export class MyWorkComponent {
   scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();
     this.animationService.scrollToSection(event, targetId);
+  }
+
+  ngAfterViewInit(): void {
+    if (this.card) {
+      this.animationService.observeElement(this.card.nativeElement); 
+    }
   }
 }

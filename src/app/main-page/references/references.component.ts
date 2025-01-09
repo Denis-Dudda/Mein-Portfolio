@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { RefCardsComponent } from './ref-cards/ref-cards.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
@@ -14,8 +14,10 @@ import { AnimationService } from '../../services/animation.service';
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
-export class ReferencesComponent {
+export class ReferencesComponent implements AfterViewInit{
 
+  @ViewChild('refContainer') refContainer!: ElementRef;
+  @ViewChild('refWrapper') refWrapper!: ElementRef;
 
   refCards = [
     {
@@ -42,4 +44,15 @@ export class ReferencesComponent {
     event.preventDefault();
     this.animationService.scrollToSection(event, targetId);
   }
+
+  ngAfterViewInit(): void {
+    if (this.refContainer) {
+      this.animationService.observeElement(this.refContainer.nativeElement); 
+    }
+    if (this.refWrapper) {
+      this.animationService.observeElement(this.refWrapper.nativeElement); 
+    }
+  }
+
+
 }

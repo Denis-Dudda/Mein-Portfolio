@@ -21,7 +21,13 @@ section{
 
 .ref-title-container{
   height: 100%;
-  animation: fade-in-top-normal 1s ease-in-out 0s 1 normal none;
+  opacity: 0;  // Standardmäßig unsichtbar
+  transform: translateY(20px);  // Startposition für die Animation
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
+    &.visible {  // Wenn sichtbar, wird die Animation aktiviert
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 
 h2{
@@ -34,6 +40,16 @@ h2{
   writing-mode: vertical-rl;
 }
 
+.ref-card-wrapper{
+  opacity: 0;  // Standardmäßig unsichtbar
+  transform: translateY(20px);  // Startposition für die Animation
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
+    &.visible {  // Wenn sichtbar, wird die Animation aktiviert
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
 app-ref-cards{
   @include dFlex();
   width: 400px;
@@ -42,6 +58,4 @@ app-ref-cards{
   border: 1px solid;
   border-color: var(--primary-color);
   padding: 16px;
-  opacity: 0;
-  animation: fade-in-top-normal 1s ease-in-out forwards;
 }

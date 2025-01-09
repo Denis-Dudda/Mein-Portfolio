@@ -2,10 +2,10 @@
   <a class="arrow-references" (click)="scroll($event, 'references')">
     <img src="./img/Arrow 7.svg" alt="arrow-right">
   </a>
-  <div class="ref-title-container">
+  <div #refContainer class="ref-title-container">
     <h2>{{'REF.references' | translate}}</h2>
   </div>
-  <div>
+  <div #refWrapper class="ref-card-wrapper">
     <app-ref-cards 
   *ngFor="let card of refCards; let i = index" [card]="card" [style.animationDelay]="i * 0.6 + 's'">
 </app-ref-cards>

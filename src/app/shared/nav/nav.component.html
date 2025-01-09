@@ -1,12 +1,18 @@
 <section>
   <nav>
-    <a (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
-    <a (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
-    <a (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
-    <a (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
+    <a class="nav-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
+    <a class="nav-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
+    <a class="nav-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
+    <a class="nav-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
     <a class="nav-img-container"  (click)="scroll($event, 'home')">
       <img src="./img/DD.jpg" alt="">
     </a>
+    <div class="burger-menu">
+      <a class="burger-menu-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
+      <a class="burger-menu-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
+      <a class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
+      <a class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
+    </div>
   
   </nav>
 </section>

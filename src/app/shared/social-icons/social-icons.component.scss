@@ -42,3 +42,9 @@
   color: var(--primary-color);
   cursor: pointer;
 }
+
+@media (max-width:800px) {
+  .social-icon-wrapper{
+    display: none;
+  }
+}

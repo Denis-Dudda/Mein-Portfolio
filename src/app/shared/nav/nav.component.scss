@@ -23,10 +23,43 @@ nav{
       cursor: pointer;
     }
   }
+
+  .burger-menu{
+    display: none;
+  }
 }
 
 .nav-img-container{
   img{
   rotate: 180deg;
+  }
+}
+
+@media (max-width:800px) {
+  section{
+
+    nav{
+      width: 100vw;
+      height: 80px;
+      writing-mode: unset;
+      direction: unset;
+    }
+
+    .nav-links{
+      display: none;
+    }
+
+    .nav-img-container {
+      display: block;
+
+    }
+
+    .burger-menu{
+      display: flex;
+    }
+
+    .burger-menu-links {
+      display: block;
+    }
   }
 }

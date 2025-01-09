@@ -77,4 +77,15 @@
     }
   }
 
-  
+  @media (max-width: 800px) {
+    body{
+      width: 100vw;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .contant-wrapper{
+      flex-direction: column;
+    }
+  }

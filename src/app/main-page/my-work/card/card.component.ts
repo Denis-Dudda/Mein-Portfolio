@@ -8,6 +8,8 @@ export interface Work {
   aboutTheProjekt: string;
   technologies: string;
   description: string;
+  githubUrl?: string; 
+  liveDemoUrl?: string; 
 }
 
 @Component({
@@ -20,9 +22,14 @@ export interface Work {
 export class CardComponent {
   @Input() work?: Work;
   
-  navigateTo(url: string): void {
+  navigateTo(url: string | undefined): void {
     if (url) {
-      window.open(url, '_blank'); 
+      window.open(url, '_blank');
     }
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.work);
+    
   }
 }

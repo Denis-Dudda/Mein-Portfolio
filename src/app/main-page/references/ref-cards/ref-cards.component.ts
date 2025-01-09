@@ -18,7 +18,4 @@ export interface Card {
 export class RefCardsComponent {
   @Input() card?: Card;
 
-  ngOnChanges() {
-    console.log('Received card:', this.card); // Überprüfe, ob `card` hier korrekt ankommt
-  }
 }

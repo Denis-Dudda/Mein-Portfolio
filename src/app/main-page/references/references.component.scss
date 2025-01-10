@@ -59,3 +59,10 @@ app-ref-cards{
   border-color: var(--primary-color);
   padding: 16px;
 }
+
+@media (max-width:800px) {
+  .arrow-references{
+    display: none;
+  }
+
+}

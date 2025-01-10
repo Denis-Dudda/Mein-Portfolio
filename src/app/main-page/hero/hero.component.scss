@@ -73,3 +73,11 @@ div{
     opacity: 1;
   }
 }
+
+@media (max-width:800px) {
+  section{
+    a{
+      display: none;
+    }
+  }
+}

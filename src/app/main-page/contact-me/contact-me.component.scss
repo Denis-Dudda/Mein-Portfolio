@@ -176,3 +176,14 @@ form{
   }
 }
 
+@media (max-width:800px) {
+  .arrow-contact{
+    display: none;
+  }
+  .impressum-container{
+    >a{
+      display: none;
+    }
+  }
+}
+

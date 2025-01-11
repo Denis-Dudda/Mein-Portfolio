@@ -150,10 +150,10 @@ section {
 @media (max-width:800px) {
   section{
     flex-direction: column;
-
+    
       .why-me{
         transform: rotate(0deg);
-        writing-mode: unset;
+        writing-mode: lr;
       }
 
       .i-am{

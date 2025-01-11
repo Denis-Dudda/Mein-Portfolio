@@ -90,6 +90,10 @@ flex-direction: column;
 
   section{
     flex-direction: column;
+      >span{
+        transform: rotate(0deg);
+        writing-mode: lr;
+      }
   }
 
   .grid-wrapper{

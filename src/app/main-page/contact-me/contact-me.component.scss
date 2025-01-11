@@ -177,17 +177,6 @@ form{
 }
 
 @media (max-width:800px) {
-  .arrow-contact{
-    display: none;
-  }
-  .impressum-container{
-    >a{
-      display: none;
-    }
-  }
-}
-
-@media (max-width:800px) {
   section{
     flex-direction: column;
   }
@@ -196,7 +185,16 @@ form{
     flex-direction: column;
     >span{
       transform: rotate(0deg);
-      writing-mode: unset;
+      writing-mode: lr;
+    }
+  }
+
+  .arrow-contact{
+    display: none;
+  }
+  .impressum-container{
+    >a{
+      display: none;
     }
   }
 }

@@ -60,19 +60,17 @@ app-ref-cards{
   padding: 16px;
 }
 
-@media (max-width:800px) {
+@media (max-width:800px){
+
   .arrow-references{
     display: none;
   }
 
-}
-
-@media (max-width:800px){
   section{
     flex-direction: column;
       h2{
         transform: rotate(0deg);
-        writing-mode: unset;
+        writing-mode: lr;
       }
   }
 

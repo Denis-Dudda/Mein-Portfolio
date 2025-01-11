@@ -29,3 +29,11 @@
     @include dFlex();
     padding-left: 120px;
   }
+
+  @media (max-width:800px) {
+    app-my-skill-set{
+      margin-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }

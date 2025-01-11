@@ -83,4 +83,20 @@ flex-direction: column;
   animation: fade-in-bottom-normal 0.5s ease-in-out 1s forwards;
 }
 
+@media(max-width:800px) {
+  .arrow-skill{
+    display: none;
+  }
+
+  section{
+    flex-direction: column;
+  }
+
+  .grid-wrapper{
+    .icon-description{
+      width: auto;
+    }
+  }
+}
+
 

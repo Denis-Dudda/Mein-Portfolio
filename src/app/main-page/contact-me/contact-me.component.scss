@@ -187,3 +187,17 @@ form{
   }
 }
 
+@media (max-width:800px) {
+  section{
+    flex-direction: column;
+  }
+
+  .contact-me-container{
+    flex-direction: column;
+    >span{
+      transform: rotate(0deg);
+      writing-mode: unset;
+    }
+  }
+}
+

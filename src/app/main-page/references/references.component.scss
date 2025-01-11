@@ -66,3 +66,14 @@ app-ref-cards{
   }
 
 }
+
+@media (max-width:800px){
+  section{
+    flex-direction: column;
+      h2{
+        transform: rotate(0deg);
+        writing-mode: unset;
+      }
+  }
+
+}

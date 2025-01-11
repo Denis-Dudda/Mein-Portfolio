@@ -77,3 +77,15 @@ button{
     background: linear-gradient(160deg, #B5E93B, #547800);
   }
 }
+
+@media (max-width:800px) {
+
+  a{
+    display: none;
+  }
+
+  .card-wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+}

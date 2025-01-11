@@ -79,3 +79,10 @@ flex-direction: column;
   }
 }
 }
+
+@media (max-width:800px) {
+  section{
+    width: 585px;
+    flex-direction: column;
+  }
+}

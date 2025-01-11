@@ -31,9 +31,30 @@
   }
 
   @media (max-width:800px) {
+
+    app-why-me{
+      margin-top: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
     app-my-skill-set{
       margin-bottom: 0px;
       padding-left: 0px;
       padding-right: 0px;
+    }
+
+    app-my-work{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    app-references{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    app-contact-me{
+      padding-left: 0px;
     }
   }

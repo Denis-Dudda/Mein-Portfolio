@@ -146,3 +146,36 @@ section {
     }
   }
 }
+
+@media (max-width:800px) {
+  section{
+    flex-direction: column;
+
+      .why-me{
+        transform: rotate(0deg);
+        writing-mode: unset;
+      }
+
+      .i-am{
+        margin-bottom: 24px;
+      }
+
+      .why-me-contant{
+       width: auto;
+       @include dFlex();
+       flex-direction: column;
+        button{
+          position: static;
+        }
+        p{
+          width: 90vw;
+        }
+      }
+
+      .icon-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+  }
+}

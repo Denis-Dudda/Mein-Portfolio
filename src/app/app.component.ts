@@ -61,6 +61,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private handleWheel = (event: WheelEvent) => {
     event.preventDefault();
 
+    // Prüfen, ob die Bildschirmbreite kleiner als 801px ist
+    const isSmallScreen = window.innerWidth < 801;
+
     // Den aktuellen Zeitpunkt ermitteln
     const now = Date.now();
 
@@ -71,19 +74,28 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       // Berechne den Scrollwert basierend auf deltaY und dem scrollFactor
       const scrollAmount = event.deltaY * this.scrollFactor;
 
-      // Berechne die neue horizontale Scroll-Position
-      const newScrollLeft = window.scrollX + scrollAmount;
+      if (isSmallScreen) {
+        // Vertikales Scrollen für kleine Bildschirme
+        const newScrollTop = window.scrollY + scrollAmount;
 
-      // Speichern der neuen Scroll-Position im localStorage
-      localStorage.setItem('scrollLeft', newScrollLeft.toString());
+        // Scrollen nach oben/unten
+        window.scrollTo({
+          top: newScrollTop,
+          behavior: 'smooth', // Sanftes Scrollen
+        });
+      } else {
+        // Horizontales Scrollen für größere Bildschirme
+        const newScrollLeft = window.scrollX + scrollAmount;
 
-      // Setze die neue Scroll-Position mit sanftem Verhalten
-      window.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth', // Sanftes Scrollen
-      });
+        // Speichern der neuen Scroll-Position im localStorage
+        localStorage.setItem('scrollLeft', newScrollLeft.toString());
+
+        // Scrollen nach links/rechts
+        window.scrollTo({
+          left: newScrollLeft,
+          behavior: 'smooth', // Sanftes Scrollen
+        });
+      }
     }
   };
-
-
 }

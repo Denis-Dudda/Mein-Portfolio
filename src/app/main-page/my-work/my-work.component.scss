@@ -88,4 +88,13 @@ button{
     flex-direction: column;
     align-items: center;
   }
+
+  .my-work{
+    transform: rotate(0deg);
+    writing-mode: lr;
+  }
+
+  .ongoing-wrapper{
+    margin-bottom: 80px;
+  }
 }

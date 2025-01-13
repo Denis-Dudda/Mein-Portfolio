@@ -90,6 +90,12 @@ flex-direction: column;
 
   section{
     flex-direction: column;
+    height: auto;
+    width: auto;
+      >div{
+        align-items: center;
+        height: auto;
+      }
       >span{
         transform: rotate(0deg);
         writing-mode: lr;
@@ -97,8 +103,13 @@ flex-direction: column;
   }
 
   .grid-wrapper{
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 150px 150px 150px 150px;
+
+
     .icon-description{
       width: auto;
+      
     }
   }
 }

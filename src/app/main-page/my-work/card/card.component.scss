@@ -83,6 +83,12 @@ flex-direction: column;
 @media (max-width:800px) {
   section{
     width: 585px;
+    height: auto;
     flex-direction: column;
+    padding-right: 16px;
+  }
+
+  .projekt-img-container{
+    padding-bottom: 16px;
   }
 }

@@ -1,18 +1,29 @@
 <section>
   <nav>
+    <!-- Logo -->
+    <a class="nav-img-container" (click)="scroll($event, 'home')">
+      <img src="./img/DD.jpg" alt="">
+    </a>
+
+    <!-- Hauptlinks (Desktop) -->
     <a class="nav-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
     <a class="nav-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
     <a class="nav-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
     <a class="nav-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
-    <a class="nav-img-container"  (click)="scroll($event, 'home')">
-      <img src="./img/DD.jpg" alt="">
-    </a>
-    <div class="burger-menu">
+
+    <!-- Burger Menü Button (wird auf mobilen Geräten angezeigt) -->
+    <button class="burger-icon" (click)="toggleBurgerMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Burger Menü Links (wird nur bei Klick angezeigt) -->
+    <div class="burger-menu" *ngIf="burgerMenuOpen">
       <a class="burger-menu-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
       <a class="burger-menu-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
       <a class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
       <a class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
     </div>
-  
   </nav>
 </section>

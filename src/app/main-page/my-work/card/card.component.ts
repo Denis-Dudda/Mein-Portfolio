@@ -22,14 +22,16 @@ export interface Work {
 export class CardComponent {
   @Input() work?: Work;
   
+  isExpanded: boolean = false; // Zustand, ob die Karte erweitert ist
+
+  toggleExpand(): void {
+    this.isExpanded = !this.isExpanded; // Zustand umschalten
+  }
+
   navigateTo(url: string | undefined): void {
     if (url) {
       window.open(url, '_blank');
     }
   }
 
-  ngAfterViewInit(): void {
-    console.log(this.work);
-    
-  }
 }

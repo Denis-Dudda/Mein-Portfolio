@@ -10,7 +10,6 @@ nav {
   background-color: var(--primary-color);
   @include dFlex($jc: space-evenly, $g: 32px);
   writing-mode: vertical-rl;
-  direction: rtl;
   box-shadow: 21px 2px 17px 9px rgba(0, 0, 0, 0.94);
   position: fixed;
   z-index: 999;

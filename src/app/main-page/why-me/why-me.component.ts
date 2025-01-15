@@ -20,4 +20,9 @@ export class WhyMeComponent implements AfterViewInit {
       this.animationService.observeElement(this.whyMeSection.nativeElement);
     }
   }
+
+  scroll(event: MouseEvent, targetId: string): void {
+    event.preventDefault();
+    this.animationService.scrollToSection(event, targetId);
+  }
 }

@@ -3,7 +3,7 @@
 section{
   @include dFlex();
   height: 780px;
-  >div{
+  >.ref-card-wrapper{
     @include dFlex($jc:flex-end, $g:32px);
     flex-direction: column;
   }
@@ -68,10 +68,22 @@ app-ref-cards{
 
   section{
     flex-direction: column;
-      h2{
+    height: auto;  
+     h2{
         transform: rotate(0deg);
         writing-mode: lr;
       }
-  }
 
+      .ref-card-wrapper{
+        flex-direction: row;
+      }
+  }
+}
+
+@media (max-width:450px) {
+  section{
+    h2{
+      font-size: 48px;
+    }
+}
 }

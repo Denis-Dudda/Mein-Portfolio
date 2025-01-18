@@ -93,8 +93,12 @@ button{
     transform: rotate(0deg);
     writing-mode: lr;
   }
+}
 
-  .ongoing-wrapper{
-    margin-bottom: 80px;
-  }
+@media (max-width:450px) {
+  .my-work{
+    
+      font-size: 48px;
+    
+}
 }

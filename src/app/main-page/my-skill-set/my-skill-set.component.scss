@@ -95,6 +95,10 @@ flex-direction: column;
       >div{
         align-items: center;
         height: auto;
+          >span{
+            padding: 0px;
+            width: 90vw;
+          }
       }
       >span{
         transform: rotate(0deg);
@@ -112,6 +116,14 @@ flex-direction: column;
       
     }
   }
+}
+
+@media (max-width:450px) {
+  section{
+    >span{
+      font-size: 48px;
+    }
+}
 }
 
 

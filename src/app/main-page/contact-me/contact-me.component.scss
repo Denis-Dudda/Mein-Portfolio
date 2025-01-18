@@ -197,5 +197,26 @@ form{
       display: none;
     }
   }
+
+  form{  
+    .name-mail{
+      width: 75vw;
+    }
+
+    textarea{
+      width: 75vw;
+    }
+
+    button{
+      left: 0px;
+    }
+  }
 }
 
+@media (max-width:450px) {
+  .contact-me-container{
+    >span{
+      font-size: 48px;
+    }
+}
+}

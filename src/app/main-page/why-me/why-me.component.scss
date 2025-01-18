@@ -179,3 +179,11 @@ section {
       }
   }
 }
+
+@media (max-width:450px) {
+  section{
+    .why-me{
+      font-size: 48px;
+    }
+}
+}

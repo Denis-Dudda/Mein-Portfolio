@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, } from '@angular/core';
+import { Component, Input, HostListener, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 export interface Work {
@@ -15,17 +15,32 @@ export interface Work {
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule,TranslateModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() work?: Work;
-  
-  isExpanded: boolean = false; // Zustand, ob die Karte erweitert ist
+
+  isExpanded: boolean = true; // Standardmäßig offen für große Bildschirme
+
+  ngOnInit(): void {
+    this.updateCardState(window.innerWidth); // Setze den Anfangszustand basierend auf der Fensterbreite
+  }
+
+  // Überwache Änderungen der Fensterbreite
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.updateCardState(event.target.innerWidth);
+  }
+
+  // Methode, die den Zustand der Karte basierend auf der Fensterbreite setzt
+  private updateCardState(width: number): void {
+    this.isExpanded = width > 800; // Offen bei >800px, geschlossen bei <=800px
+  }
 
   toggleExpand(): void {
-    this.isExpanded = !this.isExpanded; // Zustand umschalten
+    this.isExpanded = !this.isExpanded; // Zustand manuell umschalten
   }
 
   navigateTo(url: string | undefined): void {
@@ -33,5 +48,4 @@ export class CardComponent {
       window.open(url, '_blank');
     }
   }
-
 }

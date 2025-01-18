@@ -1,13 +1,10 @@
-<section 
-  class="projekt-card" 
-  [class.expanded]="isExpanded" 
-  (click)="toggleExpand()">
+<section class="projekt-card">
   <div class="projekt-description-container">
     <div class="projekt-name-container">
       <h2>{{work?.projektNumber}}</h2>
       <h3>{{work?.projektName}}</h3>
     </div>
-    <div class="about-projekt-container" *ngIf="isExpanded">
+    <div class="about-projekt-container">
       <ul>
         <li>{{'WORK.about' | translate}}</li>
       </ul>
@@ -34,6 +31,12 @@
         {{'WORK.live' | translate}}
       </button>
     </div>
+  </div>
+  <div class="toggle-card-container">
+    <span [class.expanded]="isExpanded" (click)="toggleExpand()" *ngIf="!isExpanded" class="toggle-card">Show me more</span>
+    <div [class.expanded]="isExpanded" (click)="toggleExpand()" *ngIf="!isExpanded"  class="triangle"></div>
+    <span [class.expanded]="isExpanded" (click)="toggleExpand()"  *ngIf="isExpanded" class="toggle-card show-me-less">Show me less</span>
+    <div [class.expanded]="isExpanded" (click)="toggleExpand()"  *ngIf="isExpanded"  class="triangle show-me-less"></div>
   </div>
 </section>
 

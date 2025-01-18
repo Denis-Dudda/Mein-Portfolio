@@ -43,10 +43,6 @@ section{
   }
 }
 
-
-
-
-
 .projekt-img-container{    // muss noch bearbeitet werden //
 @include dFlex($g:16px);
 flex-direction: column;
@@ -80,6 +76,38 @@ flex-direction: column;
 }
 }
 
+.toggle-card-container{
+  @include dFlex($g:16px, $ai: flex-start);
+  .toggle-card{
+    display: none;
+    color: var(--primary-color);
+    text-decoration: underline;
+    margin-bottom: 8px;
+      &:hover{
+        cursor: pointer;
+      }
+  }
+  
+  .show-me-less{
+    position: relative;
+    top: 36px;
+  }
+
+  .triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 20px 10px;
+  border-color: transparent transparent #b5e93b transparent;
+  rotate: 180deg;
+  &.expanded {
+    transform: rotate(180deg);
+  }
+  }
+}
+
+
+
 @media (max-width:800px) {
   section{
     width: 585px;
@@ -90,5 +118,15 @@ flex-direction: column;
 
   .projekt-img-container{
     padding-bottom: 16px;
+      >img{
+        width: 180px;
+      }
+  }
+
+  .toggle-card-container{
+    
+    .toggle-card{
+      display: block;
+    }
   }
 }

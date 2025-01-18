@@ -22,7 +22,7 @@ export class ReferencesComponent implements AfterViewInit{
   refCards = [
     {
       description:'REF.description_card_1',
-      fullName: 'James Rugman',
+      fullName: 'Mehmet Deliaci',
       projekt: 'Join'
     },
     {

@@ -9,7 +9,8 @@ export interface Work {
   technologies: string;
   description: string;
   githubUrl?: string; 
-  liveDemoUrl?: string; 
+  liveDemoUrl?: string;
+  img?: string; 
 }
 
 @Component({

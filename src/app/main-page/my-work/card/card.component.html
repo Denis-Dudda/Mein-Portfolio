@@ -24,7 +24,7 @@
     </div>
   </div>
   <div *ngIf="isExpanded" class="projekt-img-container">
-    <img src="./img/Photo.svg" alt="">
+    <img [src]="work?.img">
     <div>
       <button class="transparent-button" (click)="navigateTo(work?.githubUrl)">GitHub</button>
       <button class="color-button" (click)="navigateTo(work?.liveDemoUrl)">

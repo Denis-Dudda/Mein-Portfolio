@@ -47,7 +47,9 @@ section{
 @include dFlex($g:16px);
 flex-direction: column;
 >img{
-  width: 120px;
+  width: 278px;
+  height: 210px;
+  border-radius: 5px;
 }
 >div{
   display: flex;

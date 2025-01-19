@@ -5,10 +5,13 @@
   <div #refContainer class="ref-title-container">
     <h2>{{'REF.references' | translate}}</h2>
   </div>
-  <div #refWrapper class="ref-card-wrapper">
-    <app-ref-cards 
-  *ngFor="let card of refCards; let i = index" [card]="card" [style.animationDelay]="i * 0.6 + 's'">
-</app-ref-cards>
+  <div #refWrapper class="ref-card-wrapper" [ngClass]="{'single-card': isMobile}">
+    <ng-container *ngIf="isMobile">
+      <app-ref-cards  [card]="refCards[selectedCardIndex]"></app-ref-cards>
+      <div class="card-buttons">
+        <button *ngFor="let card of refCards; let i = index" [class.active]="i === selectedCardIndex" (click)="selectCard(i)">
+        </button>
+      </div>
+    </ng-container>
   </div>
-
-  </section>
+</section>

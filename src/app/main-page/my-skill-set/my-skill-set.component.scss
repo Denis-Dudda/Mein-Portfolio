@@ -27,6 +27,7 @@ transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für
   >span{
     color: white;
     padding-left: 28px;
+    text-align: center;
   }
  }
 }
@@ -75,6 +76,7 @@ flex-direction: column;
     @include dFlex();
     opacity: 0; /* Unsichtbar zu Beginn */
     animation: fade-in-bottom-normal 0.5s ease-in-out forwards;
+    text-align: center;
   }
 }
 

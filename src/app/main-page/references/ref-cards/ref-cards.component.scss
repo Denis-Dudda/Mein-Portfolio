@@ -2,6 +2,7 @@
 
 section{
   @include dFlex($g:16px);
+  flex-wrap: wrap;
 }
 
 .description{
@@ -10,9 +11,16 @@ section{
 
 .name-container{
   color: var(--primary-color);
+  width: 240px;
+  flex: 1;
+  text-align: center;
 }
 
 .border-line{
   border-left: 1px solid var(--primary-color);
   height: 180px;
+}
+
+.description-wrapper{
+  flex: 2;
 }

@@ -84,6 +84,10 @@ app-ref-cards{
       border: 1px solid var(--primary-color);
       border-radius: 20px;
       background-color: transparent;
+       &.active{
+        background-color: var(--primary-color);
+        width: 36px;
+       }
     }
   }
 }

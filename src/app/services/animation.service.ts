@@ -20,7 +20,7 @@ export class AnimationService {
           }
         });
       },
-      { threshold: 0.3 } // 50% des Elements müssen sichtbar sein, bevor die Animation startet
+      { threshold: 0.1 } // 10% des Elements müssen sichtbar sein, bevor die Animation startet
     );
   }
 

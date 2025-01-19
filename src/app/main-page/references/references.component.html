@@ -5,9 +5,20 @@
   <div #refContainer class="ref-title-container">
     <h2>{{'REF.references' | translate}}</h2>
   </div>
-  <div #refWrapper class="ref-card-wrapper" [ngClass]="{'single-card': isMobile}">
+
+  <!-- Wrapper für Karten -->
+  <div #refWrapper class="ref-card-wrapper">
+    <ng-container *ngIf="!isMobile">
+      <!-- Alle Karten im Desktop-Modus untereinander anzeigen -->
+      <div class="card-container">
+        <app-ref-cards *ngFor="let card of refCards" [card]="card"></app-ref-cards>
+      </div>
+    </ng-container>
+
     <ng-container *ngIf="isMobile">
-      <app-ref-cards  [card]="refCards[selectedCardIndex]"></app-ref-cards>
+      <!-- Eine Karte im Mobile-Modus -->
+      <app-ref-cards [card]="refCards[selectedCardIndex]"></app-ref-cards>
+      <!-- Buttons zum Wechseln der Karten im Mobile-Modus -->
       <div class="card-buttons">
         <button *ngFor="let card of refCards; let i = index" [class.active]="i === selectedCardIndex" (click)="selectCard(i)">
         </button>

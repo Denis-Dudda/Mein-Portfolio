@@ -1,105 +1,141 @@
 @import '../../../styles.scss';
 
-section{
+section {
   @include dFlex();
   height: 780px;
-  >.ref-card-wrapper{
-    @include dFlex($jc:flex-end, $g:32px);
+
+  /* Wrapper für Karten */
+  .ref-card-wrapper {
+    @include dFlex($jc: flex-end, $g: 32px);
     flex-direction: column;
-  }
-}
-
-.arrow-references{
-  position: relative;
-  top: 375px;
-  transition: transform 0.3s ease;
-  &:hover{
-    @include aGlow();
-    cursor: pointer;
-  }
-}
-
-.ref-title-container{
-  height: 100%;
-  opacity: 0;  // Standardmäßig unsichtbar
-  transform: translateY(20px);  // Startposition für die Animation
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
-    &.visible {  // Wenn sichtbar, wird die Animation aktiviert
-  opacity: 1;
-  transform: translateY(0);
-}
-}
-
-h2{
-  font-size: 64px;
-  font-weight: bold;
-  color: transparent; /* Der Text ist transparent */
-  -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-  background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
-}
-
-.ref-card-wrapper{
-  opacity: 0;  // Standardmäßig unsichtbar
-  transform: translateY(20px);  // Startposition für die Animation
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
-    &.visible {  // Wenn sichtbar, wird die Animation aktiviert
-  opacity: 1;
-  transform: translateY(0);
-}
-}
-
-app-ref-cards{
-  @include dFlex();
-  width: 400px;
-  height: 200px;
-  border-radius: 40px;
-  border: 1px solid;
-  border-color: var(--primary-color);
-  padding: 16px;
-}
-
-@media (max-width:800px){
-
-  .arrow-references{
-    display: none;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      display: flex;
+    }
   }
 
-  section{
-    flex-direction: column;
-    height: auto;  
-     h2{
-        transform: rotate(0deg);
-        writing-mode: lr;
-      }
+  .card-container {
+    display: flex;
+    gap: 32px;
+    flex-direction: column; /* Alle Karten untereinander im Desktop-Modus */
+    width: 100%;
   }
 
-  .card-buttons{
+  .card-buttons {
     display: flex;
     gap: 8px;
-    button{
+    button {
       width: 18px;
       height: 8px;
       border: 1px solid var(--primary-color);
       border-radius: 20px;
       background-color: transparent;
-       &.active{
+
+      &.active {
         background-color: var(--primary-color);
         width: 36px;
-       }
-    }
-  }
-}
-
-@media (max-width:450px) {
-  section{
-    h2{
-      font-size: 48px;
+      }
     }
   }
 
-  app-ref-cards{
-    width: 85vw;
+  app-ref-cards {
+    @include dFlex();
+    width: 400px;
+    height: 200px;
+    border-radius: 40px;
+    border: 1px solid;
+    border-color: var(--primary-color);
+    padding: 16px;
   }
-}
+
+  .arrow-references {
+    position: relative;
+    top: 375px;
+    transition: transform 0.3s ease;
+    &:hover {
+      @include aGlow();
+      cursor: pointer;
+    }
+  }
+
+  /* Container für den Titel */
+  .ref-title-container {
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      display: flex;
+    }
+  }
+
+  h2 {
+    font-size: 64px;
+    font-weight: bold;
+    color: transparent; /* Der Text ist transparent */
+    -webkit-text-stroke: 1px var(--primary-color); /* Rand um den Text */
+    background: transparent; /* Verhindert Hintergrundfarbe */
+    transform: rotate(180deg);
+    writing-mode: vertical-rl; /* Text vertikal */
+  }
+
+}  
+
+  /* Mobile-spezifische Styles */
+  @media (max-width: 800px) {
+    .arrow-references {
+      display: none; /* Pfeil in der mobilen Ansicht ausblenden */
+    }
+
+    section {
+      height: auto;
+      flex-direction: column;
+      h2 {
+        transform: rotate(0deg); /* Text horizontal */
+        writing-mode: lr; /* Text wieder normal ausrichten */
+      }
+    }
+
+    /* Anzeige der Karten als Einzelfenster im Mobile-Modus */
+    .card-container {
+      display: block; /* Nur eine Karte im Mobile-Modus */
+    }
+
+    .card-buttons {
+      display: flex;
+      gap: 8px;
+      button {
+        width: 18px;
+        height: 8px;
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        background-color: transparent;
+        &.active {
+          background-color: var(--primary-color);
+          width: 36px;
+        }
+      }
+    }
+  }
+
+  /* Weitere Anpassungen für kleinere Geräte */
+  @media (max-width: 450px) {
+    section {
+      h2 {
+        font-size: 48px;
+      }
+    }
+
+    app-ref-cards {
+      width: 85vw; /* Breite der Karte an die Bildschirmgröße anpassen */
+    }
+  }
+

@@ -34,17 +34,33 @@ export class AnimationService {
     this.observer.unobserve(element);
   }
 
-  // Scrollen zu einer bestimmten Section
-  scrollToSection(event: Event, targetId: string) {
+  scrollToSection(event: Event, targetId: string, closeBurgerMenuCallback?: () => void): void {
     event.preventDefault();
     const target = document.getElementById(targetId);
+  
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-      const navWidth = 172;  
-      window.scrollTo({
-        left: target.offsetLeft - navWidth, 
-        behavior: 'smooth'       
-      });
+      const isMobile = window.innerWidth < 800; // Prüfen, ob die Ansicht mobil ist
+      const offset = 80; // Abstand von 80px nach oben
+  
+      if (isMobile) {
+        // Mobile Ansicht: Vertikales Scrollen mit Offset
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+  
+        // Burger-Menü schließen, falls eine Callback-Funktion übergeben wurde
+        if (closeBurgerMenuCallback) {
+          closeBurgerMenuCallback();
+        }
+      } else {
+        // Desktop Ansicht: Horizontales Scrollen mit Offset
+        const navWidth = 172; // Breite der Navigation
+        target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+        window.scrollTo({
+          left: target.offsetLeft - navWidth,
+          top: window.scrollY - offset, // Optional: Kein vertikaler Offset nötig, falls nur horizontal
+          behavior: 'smooth',
+        });
+      }
     }
   }
 }

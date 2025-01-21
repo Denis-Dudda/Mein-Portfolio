@@ -25,6 +25,7 @@ export class NavComponent {
     event.preventDefault();
     
     this.animationService.scrollToSection(event, targetId);
+    this.burgerMenuOpen = false; // Schließt das Burger-Menü
   }
   
 }

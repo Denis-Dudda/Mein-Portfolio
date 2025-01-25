@@ -30,6 +30,10 @@ transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für
     text-align: center;
   }
  }
+
+ .mobile-button-wrapper{
+  display: none;
+}
 }
 
 .arrow-skill{
@@ -85,10 +89,6 @@ flex-direction: column;
   animation: fade-in-bottom-normal 0.5s ease-in-out 1s forwards;
 }
 
-.mobile-description{
-  display: none;
-}
-
 .let-us-talk-button{
   border-radius: 30px;
   width: 135px;
@@ -121,6 +121,10 @@ flex-direction: column;
       >span{
         transform: rotate(0deg);
         writing-mode: lr;
+      }
+
+      .mobile-button-wrapper{
+        @include dFlex();
       }
   }
 

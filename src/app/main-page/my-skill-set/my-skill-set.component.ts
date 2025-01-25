@@ -15,7 +15,7 @@ import { AnimationService } from '../../services/animation.service';
 })
 export class MySkillSetComponent implements AfterViewInit{
 
-  @ViewChild('skill') skill!: ElementRef;  // Hier referenzieren wir das Element, das beobachtet werden soll
+  @ViewChild('skill') skill!: ElementRef;  // Hier referenzieren wir das Element, das beobachtet werden soll 
 
   icons = [
     { src: './icons/Property 1.svg', label: 'Icon 1', property: 'Angular' },

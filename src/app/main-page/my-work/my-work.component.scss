@@ -93,6 +93,12 @@ button{
     transform: rotate(0deg);
     writing-mode: lr;
   }
+
+  .description-container{
+    button{
+      display: none;
+    }
+  }
 }
 
 @media (max-width:450px) {

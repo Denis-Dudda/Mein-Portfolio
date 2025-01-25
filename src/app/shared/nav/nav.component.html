@@ -12,7 +12,7 @@
     <a class="nav-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
 
     <!-- Burger Menü Button (wird auf mobilen Geräten angezeigt) -->
-    <button class="burger-icon" (click)="toggleBurgerMenu()">
+    <button class="burger-icon" [ngClass]="{'open': burgerMenuOpen}" (click)="toggleBurgerMenu()">
       <span></span>
       <span></span>
       <span></span>

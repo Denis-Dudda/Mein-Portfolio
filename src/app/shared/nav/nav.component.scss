@@ -41,10 +41,11 @@ nav {
     .burger-menu-links {
       text-decoration: none;
       font-size: 20px;
-      color: white;
+      color: var(--secondary-text-color);
 
       &:hover {
         color: var(--secondary-color);
+        cursor: pointer;
       }
     }
   }
@@ -56,12 +57,32 @@ nav {
     background: none;
     border: none;
     cursor: pointer;
-
+    position: relative; /* Damit wir das X zentrieren können */
+  
     span {
       display: block;
       width: 30px;
       height: 3px;
-      background-color: white;
+      background-color: var(--secondary-text-color);
+      transition: all 0.3s ease; /* Weiche Übergänge */
+    }
+  
+    &.open {
+      span:nth-child(1) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 2;
+      }
+  
+      span:nth-child(2) {
+        opacity: 0; /* Entfernt den mittleren Balken */
+      }
+  
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 }
@@ -99,6 +120,8 @@ nav {
 
       .burger-menu {
         display: flex; // Burger-Menü bei Klick einblenden
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
       }
     }
   }

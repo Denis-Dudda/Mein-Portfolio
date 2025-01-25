@@ -23,13 +23,13 @@ export class ReferencesComponent implements AfterViewInit {
     },
     {
       description: 'REF.description_card_2',
-      fullName: 'Evelyn Marx',
-      projekt: 'Da Bubble'
+      fullName: 'Andre Veltens',
+      projekt: 'Kochwelt'
     },
     {
       description: 'REF.description_card_3',
-      fullName: 'Noah Mueller',
-      projekt: 'El pollo'
+      fullName: 'Kai ',
+      projekt: 'Join'
     }
   ];
 

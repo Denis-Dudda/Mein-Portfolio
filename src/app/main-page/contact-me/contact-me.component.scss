@@ -178,7 +178,8 @@ form{
 
 @media (max-width:800px) {
   section{
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 0px;
   }
 
   .contact-me-container{
@@ -186,6 +187,8 @@ form{
     >span{
       transform: rotate(0deg);
       writing-mode: lr;
+      position: relative;
+      bottom: 300px;
     }
   }
 
@@ -193,8 +196,18 @@ form{
     display: none;
   }
   .impressum-container{
+    position: relative;
+    top: 122px;
     text-align: center;
+    height: auto;
+    width: 90vw;
     >a{
+      rotate: 90deg;
+      position: relative;
+      top: 700px;
+    }
+
+    .notice-policy-container{
       display: none;
     }
   }

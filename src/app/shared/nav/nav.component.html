@@ -24,6 +24,11 @@
       <a class="burger-menu-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
       <a class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
       <a class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
+      <div class="language">
+        <span class="DE" (click)="switchLanguage('de')">DE</span>
+        <div class="vertical-border"></div>
+        <span class="EN" (click)="switchLanguage('en')">EN</span>
+      </div>
     </div>
   </nav>
 </section>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
 import { CommonModule } from '@angular/common';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-nav',
   standalone: true,
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent { 
-  constructor (private animationService: AnimationService) {
+  constructor (private animationService: AnimationService,private translate: TranslateService) {
   }
 
   burgerMenuOpen = false;
@@ -26,6 +26,10 @@ export class NavComponent {
     
     this.animationService.scrollToSection(event, targetId);
     this.burgerMenuOpen = false; // Schließt das Burger-Menü
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);  
   }
   
 }

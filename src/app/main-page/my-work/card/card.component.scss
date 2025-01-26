@@ -39,13 +39,20 @@ section{
     list-style-type: circle;
   }
   span,li{
-    color: white
+    color: white;
+    word-wrap: break-word; /* Ermöglicht den automatischen Umbruch von langen Wörtern */
+    white-space: normal;
   }
 }
 
-.projekt-img-container{    // muss noch bearbeitet werden //
-@include dFlex($g:16px);
-flex-direction: column;
+.technologies-container{
+  word-wrap: break-word; /* Ermöglicht den automatischen Umbruch von langen Wörtern */
+  white-space: normal;
+}
+
+.projekt-img-container{    
+  @include dFlex($g:16px);
+  flex-direction: column;
 >img{
   width: 278px;
   height: 210px;
@@ -139,7 +146,6 @@ flex-direction: column;
 @media (max-width:665px) {
   section{
     width: 360px;
-
   }
 }
 

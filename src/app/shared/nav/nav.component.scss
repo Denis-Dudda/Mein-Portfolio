@@ -93,6 +93,20 @@ nav {
   }
 }
 
+.language{
+  @include dFlex($g:8px);
+  color: var(--secondary-text-color);
+  .vertical-border{
+    border-left: 3px solid var(--secondary-text-color);
+    height: 18px;
+  }
+  .DE:hover,
+  .EN:hover{
+    cursor: pointer;
+  color: black;
+  }
+}
+
 @media (max-width: 800px) {
   section {
     nav {

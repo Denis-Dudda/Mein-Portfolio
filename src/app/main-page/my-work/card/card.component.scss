@@ -7,8 +7,8 @@ section{
   border-radius: 30px;
   padding: 0px 0px 0px 32px;
   margin: 32px;
-  width: 920px;
-  height: 560px;
+  width: 940px;
+  height: 600px;
   div{
     flex: 1;
   }
@@ -43,11 +43,6 @@ section{
     word-wrap: break-word; /* Ermöglicht den automatischen Umbruch von langen Wörtern */
     white-space: normal;
   }
-}
-
-.technologies-container{
-  word-wrap: break-word; /* Ermöglicht den automatischen Umbruch von langen Wörtern */
-  white-space: normal;
 }
 
 .projekt-img-container{    

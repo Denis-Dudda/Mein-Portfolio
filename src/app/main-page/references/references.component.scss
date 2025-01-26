@@ -132,10 +132,13 @@ section {
       h2 {
         font-size: 48px;
       }
+
+      
+    app-ref-cards {
+      width: 85vw;
+      height: auto;
+    }
     }
 
-    app-ref-cards {
-      width: 85vw; /* Breite der Karte an die Bildschirmgröße anpassen */
-    }
   }
 

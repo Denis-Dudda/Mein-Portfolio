@@ -83,3 +83,17 @@ div{
     }
   }
 }
+
+@media (max-width:450px) {
+  div{
+    h1{
+      font-size: 40px;
+    }
+
+    h2{
+      font-size: 32px;
+      margin-inline-start: auto;
+    }
+  }
+
+}

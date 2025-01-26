@@ -82,6 +82,12 @@ div{
       display: none;
     }
   }
+
+  div{
+    h2{
+      margin-inline-start: auto;
+    }
+  }
 }
 
 @media (max-width:450px) {
@@ -92,7 +98,7 @@ div{
 
     h2{
       font-size: 32px;
-      margin-inline-start: auto;
+      
     }
   }
 

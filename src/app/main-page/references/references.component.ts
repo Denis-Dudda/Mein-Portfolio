@@ -28,7 +28,7 @@ export class ReferencesComponent implements AfterViewInit {
     },
     {
       description: 'REF.description_card_3',
-      fullName: 'Kai ',
+      fullName: 'Kai Schulz',
       projekt: 'Join'
     }
   ];

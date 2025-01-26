@@ -87,6 +87,14 @@ section {
     writing-mode: vertical-rl; /* Text vertikal */
   }
 
+  h3{
+    display: none;
+  }
+
+  span{
+    display: none;
+  }
+
 }  
 
   /* Mobile-spezifische Styles */
@@ -127,17 +135,40 @@ section {
   }
 
   /* Weitere Anpassungen für kleinere Geräte */
-  @media (max-width: 450px) {
-    section {
-      h2 {
-        font-size: 48px;
+  @media (max-width: 800px){
+    section{
+      h2{
+        display: none;
       }
 
-      
-    app-ref-cards {
-      width: 85vw;
-      height: auto;
+      h3{
+        display: block;
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-align: center;
+        margin-block-end: 0em;
+      }
+
+      .ref-title-container{
+        @include dFlex();
+        flex-direction: column;
+        margin-bottom: 32px;
+      }
+
+      span{
+        display: flex;
+        color: white;
+      }
     }
+  }
+
+  @media (max-width: 450px) {
+    section {
+      app-ref-cards {
+        width: 85vw;
+        height: auto;
+      }
     }
 
   }

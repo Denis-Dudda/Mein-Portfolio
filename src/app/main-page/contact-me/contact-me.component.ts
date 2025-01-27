@@ -23,10 +23,10 @@ export class ContactMeComponent {
     message: ""
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://denis-dudda.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

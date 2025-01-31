@@ -9,6 +9,7 @@ app-footer{
 @media (max-width: 800px) {
     app-footer{
         width: 100vw;
-        height: 80px;
+        height: 180px;
+        @include dFlex();
     }
 }

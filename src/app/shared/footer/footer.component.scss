@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+section {
+    display: none;
+
+}
+
+@media (max-width:800px) {
+    section {
+        display: none;
+        @include dFlex();
+        flex-direction: column;
+        div{
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

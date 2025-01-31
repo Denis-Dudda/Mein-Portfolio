@@ -98,13 +98,28 @@ form{
       display: block; /* Macht das Häkchen sichtbar */
     }
   }
-  a{
-    color: white;
-    text-decoration: none;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
+
+    a {
+      color: white;
+      text-decoration: none;
+      position: relative;
+     }
+
+      a::after {
+      content: ''; 
+      position: absolute;
+      bottom: 0; 
+      left: 0;
+      width: 0; 
+      height: 2px; 
+      background-color: var(--primary-color); 
+      transition: width 0.3s ease, left 0.3s ease;
+      }
+
+      a:hover::after {
+      width: 100%; 
+      }
+  
   button{
     border-radius: 30px;
     width: 135px;
@@ -130,9 +145,28 @@ form{
   h4{
     color: var(--primary-color);
   }
-  a{
+  a {
     color: white;
     text-decoration: none;
+    position: relative;
+    &:hover{
+      color: var(--primary-color);
+    }
+  }
+
+  a::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0; 
+    height: 2px; 
+    background-color: var(--primary-color); 
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%; 
   }
   img{
     rotate: 180deg;

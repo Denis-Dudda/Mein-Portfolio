@@ -11,18 +11,21 @@
   <!-- Wrapper für Karten -->
   <div #refWrapper class="ref-card-wrapper">
     <ng-container *ngIf="!isMobile">
-      <!-- Alle Karten im Desktop-Modus untereinander anzeigen -->
+      <!-- Desktop-Version -->
       <div class="card-container">
         <app-ref-cards *ngFor="let card of refCards" [card]="card"></app-ref-cards>
       </div>
     </ng-container>
 
     <ng-container *ngIf="isMobile">
-      <!-- Eine Karte im Mobile-Modus -->
-      <app-ref-cards [card]="refCards[selectedCardIndex]"></app-ref-cards>
-      <!-- Buttons zum Wechseln der Karten im Mobile-Modus -->
+      <!-- Mobile-Version mit Flip-Animation -->
+      <app-ref-cards #cardElement [card]="refCards[selectedCardIndex]" [ngClass]="{'flipping': isFlipping}"></app-ref-cards>
+
+      <!-- Buttons zum Wechseln der Karten -->
       <div class="card-buttons">
-        <button *ngFor="let card of refCards; let i = index" [class.active]="i === selectedCardIndex" (click)="selectCard(i)">
+        <button *ngFor="let card of refCards; let i = index"
+                [class.active]="i === selectedCardIndex"
+                (click)="selectCard(i)">
         </button>
       </div>
     </ng-container>

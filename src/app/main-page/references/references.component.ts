@@ -14,27 +14,17 @@ import { AnimationService } from '../../services/animation.service';
 export class ReferencesComponent implements AfterViewInit {
   @ViewChild('refContainer') refContainer!: ElementRef;
   @ViewChild('refWrapper') refWrapper!: ElementRef;
+  @ViewChild('cardElement', { static: false }) cardElement!: ElementRef;
 
   refCards = [
-    {
-      description: 'REF.description_card_1',
-      fullName: 'Mehmet Deliaci',
-      projekt: 'Join'
-    },
-    {
-      description: 'REF.description_card_2',
-      fullName: 'Andre Veltens',
-      projekt: 'Kochwelt'
-    },
-    {
-      description: 'REF.description_card_3',
-      fullName: 'Kai Schulz',
-      projekt: 'Join'
-    }
+    { description: 'REF.description_card_1', fullName: 'Mehmet Deliaci', projekt: 'Join' },
+    { description: 'REF.description_card_2', fullName: 'Andre Veltens', projekt: 'Kochwelt' },
+    { description: 'REF.description_card_3', fullName: 'Kai Schulz', projekt: 'Join' }
   ];
 
-  selectedCardIndex = 0; // Index der aktuell sichtbaren Karte
-  isMobile = false; // Anzeige, ob es sich um eine mobile Ansicht handelt
+  selectedCardIndex = 0;
+  isMobile = false;
+  isFlipping = false;
 
   constructor(private animationService: AnimationService) {}
 
@@ -45,23 +35,32 @@ export class ReferencesComponent implements AfterViewInit {
     if (this.refWrapper) {
       this.animationService.observeElement(this.refWrapper.nativeElement);
     }
-
-    this.checkScreenSize(); // Initiale Prüfung
+    this.checkScreenSize();
   }
 
-  @HostListener('window:resize', []) // Event-Listener für Fenstergröße
+  @HostListener('window:resize', [])
   onResize(): void {
     this.checkScreenSize();
   }
 
-  // Prüfen, ob die mobile Ansicht aktiv ist
   checkScreenSize(): void {
     this.isMobile = window.innerWidth <= 800;
   }
 
-  // Karte auswählen
   selectCard(index: number): void {
-    this.selectedCardIndex = index;
+    if (index !== this.selectedCardIndex && !this.isFlipping) {
+      this.isFlipping = true;
+
+      // Warten, bis die Karte sich dreht, dann den Index wechseln
+      setTimeout(() => {
+        this.selectedCardIndex = index;
+      }, 250); // Wechsel nach der Hälfte der Animation (0.5s / 2)
+
+      // Warten, bis die Animation fertig ist
+      setTimeout(() => {
+        this.isFlipping = false;
+      }, 500);
+    }
   }
 
   scroll(event: MouseEvent, targetId: string): void {

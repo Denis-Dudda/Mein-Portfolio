@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -6,6 +7,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from "@ngx-translate/core";
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -23,78 +25,81 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'mein-portfolio';
+  private lastScrollTime = 0;
+  private scrollThrottleDelay = 200;
+  private scrollFactor = 8;
+  private isMainPage = false;
 
-  private lastScrollTime = 0; // Der Zeitpunkt des letzten Scroll-Ereignisses
-  private scrollThrottleDelay = 200; // Verzögerung in Millisekunden, um schnelle Scroll-Ereignisse zu drosseln
-  private scrollFactor = 8; // Der Faktor für die Scroll-Geschwindigkeit (je höher, desto schneller)
- 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
+
+    // Überwache Routenwechsel
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isMainPage = event.url === '/' || event.url === '/main';
+      this.updateScrollBehavior();
+      this.updateBodyOverflow(); // Body overflow je nach Route anpassen
+    });
   }
 
   ngAfterViewInit(): void {
     if (typeof window !== 'undefined') {
-      // Scroll-Position beim Laden der Seite wiederherstellen
       const savedScrollPosition = localStorage.getItem('scrollLeft');
       if (savedScrollPosition) {
-        window.scrollTo({
-          left: parseInt(savedScrollPosition, 10),
-          behavior: 'auto', // Sofortiges Setzen der Position, kein sanftes Scrollen
-        });
+        window.scrollTo({ left: parseInt(savedScrollPosition, 10), behavior: 'auto' });
       }
-
-      // Scrollen mit Mausrad
-      window.addEventListener('wheel', this.handleWheel, { passive: false });
+      this.updateScrollBehavior();
+      this.updateBodyOverflow(); // Sicherstellen, dass overflow beim ersten Laden korrekt gesetzt ist
     }
   }
 
   ngOnDestroy(): void {
-    // Event Listener entfernen, um Speicherlecks zu vermeiden
     if (typeof window !== 'undefined') {
       window.removeEventListener('wheel', this.handleWheel);
     }
   }
 
-  // Scrollen mit dem Mausrad
+  private updateScrollBehavior(): void {
+    if (typeof window === 'undefined') return;
+
+    window.removeEventListener('wheel', this.handleWheel);
+
+    if (this.isMainPage) {
+      window.addEventListener('wheel', this.handleWheel, { passive: false });
+    }
+  }
+
+  private updateBodyOverflow(): void {
+    // Wenn wir auf der MainPage sind, horizontal scrollen erlauben
+    if (this.isMainPage) {
+      document.body.style.overflowX = 'auto';
+      document.body.style.overflowY = 'hidden'; // Vertikal deaktivieren
+    } else {
+      document.body.style.overflowX = 'hidden'; // Horizontal deaktivieren
+      document.body.style.overflowY = 'auto';  // Vertikal aktivieren
+    }
+  }
+
   private handleWheel = (event: WheelEvent) => {
+    if (!this.isMainPage) return;
+
     event.preventDefault();
-
-    // Prüfen, ob die Bildschirmbreite kleiner als 801px ist
     const isSmallScreen = window.innerWidth < 801;
-
-    // Den aktuellen Zeitpunkt ermitteln
     const now = Date.now();
 
-    // Wenn der Zeitpunkt mehr als scrollThrottleDelay ms seit dem letzten Scroll-Ereignis vergangen ist
     if (now - this.lastScrollTime > this.scrollThrottleDelay) {
-      this.lastScrollTime = now; // Zeitpunkt des letzten Scroll-Ereignisses speichern
-
-      // Berechne den Scrollwert basierend auf deltaY und dem scrollFactor
+      this.lastScrollTime = now;
       const scrollAmount = event.deltaY * this.scrollFactor;
 
       if (isSmallScreen) {
-        // Vertikales Scrollen für kleine Bildschirme
-        const newScrollTop = window.scrollY + scrollAmount;
-
-        // Scrollen nach oben/unten
-        window.scrollTo({
-          top: newScrollTop,
-          behavior: 'smooth', // Sanftes Scrollen
-        });
+        window.scrollTo({ top: window.scrollY + scrollAmount, behavior: 'smooth' });
       } else {
-        // Horizontales Scrollen für größere Bildschirme
         const newScrollLeft = window.scrollX + scrollAmount;
-
-        // Speichern der neuen Scroll-Position im localStorage
         localStorage.setItem('scrollLeft', newScrollLeft.toString());
-
-        // Scrollen nach links/rechts
-        window.scrollTo({
-          left: newScrollLeft,
-          behavior: 'smooth', // Sanftes Scrollen
-        });
+        window.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
       }
     }
   };

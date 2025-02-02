@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
@@ -17,11 +18,10 @@ export class FooterComponent implements OnInit {
   constructor(private animationService: AnimationService, private translate: TranslateService, private router: Router) {}
 
   ngOnInit(): void {
-    // Überwache Router-Ereignisse
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Überprüfen, ob die aktuelle Route die Privacy-Route ist
         this.isPrivacyPage = event.url === '/privacy';
+        console.log('isPrivacyPage:', this.isPrivacyPage); // Hier wird der Wert von isPrivacyPage überprüft
       }
     });
   }
@@ -33,6 +33,10 @@ export class FooterComponent implements OnInit {
 
   switchLanguage(language: string): void {
     this.translate.use(language);
+  }
+
+  navigateToHome(): void {
+    this.router.navigate(['/']); // Hier kannst du auch eine andere Route angeben, wenn nötig
   }
 
 }

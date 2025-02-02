@@ -1,6 +1,6 @@
 @import '../../../styles.scss';
 
-section {
+.footer-main-mobile {
     display: none;
 
 }
@@ -34,5 +34,9 @@ section {
         a:hover::after {
             width: 100%; 
         }
+    }
+
+    .footer-main-mobile{
+        display: block;
     }
 }

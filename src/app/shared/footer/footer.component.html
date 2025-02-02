@@ -1,14 +1,18 @@
 <section>
     <!-- Logo mit Klick-Event -->
-    <img src="./img/DD.jpg" alt="" (click)="scroll($event, 'home')">
+    <img class="footer-main-mobile" *ngIf="!isPrivacyPage" src="./img/DD.jpg" alt="" (click)="scroll($event, 'home')">
   
     <!-- Copyright -->
-    <span>&copy; Denis Dudda</span>
+    <span class="footer-main-mobile" *ngIf="!isPrivacyPage">&copy; Denis Dudda</span>
   
     <!-- Links, nur anzeigen, wenn nicht auf der Privacy-Seite -->
-    <div *ngIf="!isPrivacyPage">
+    <div class="footer-main-mobile" *ngIf="!isPrivacyPage">
       <a href="">Legal notice</a>
       <a href="/privacy">Privacy policy</a>
+    </div>
+
+    <div *ngIf="isPrivacyPage">
+      <p (click)="navigateToHome()">zurück</p>
     </div>
   </section>
   

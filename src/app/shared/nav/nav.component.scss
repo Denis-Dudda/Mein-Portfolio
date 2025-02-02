@@ -90,6 +90,8 @@ nav {
 .nav-img-container {
   img {
     rotate: 180deg;
+    width: 120px;
+    border-radius: 50%;
   }
 }
 
@@ -123,7 +125,8 @@ nav {
         display: block;
         margin-left: 16px;
         > img {
-          height: 63px;
+          width: 60px;
+          border-radius: 50%;
         }
       }
 

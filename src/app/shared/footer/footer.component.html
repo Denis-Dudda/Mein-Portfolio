@@ -1,9 +1,9 @@
 <section>
     <!-- Logo mit Klick-Event -->
-    <img class="footer-main-mobile" *ngIf="!isPrivacyPage" src="./img/DD.jpg" alt="" (click)="scroll($event, 'home')">
+    <img class="footer-main-mobile" src="./img/DD.jpg" alt="" (click)="scroll($event, 'home')">
   
     <!-- Copyright -->
-    <span class="footer-main-mobile" *ngIf="!isPrivacyPage">&copy; Denis Dudda</span>
+    <span class="footer-main-mobile">&copy; Denis Dudda</span>
   
     <!-- Links, nur anzeigen, wenn nicht auf der Privacy-Seite -->
     <div class="footer-main-mobile" *ngIf="!isPrivacyPage">
@@ -12,7 +12,7 @@
     </div>
 
     <div *ngIf="isPrivacyPage">
-      <p (click)="navigateToHome()">zurück</p>
+        <button (click)="navigateToHome()" class="button"></button>
     </div>
   </section>
   

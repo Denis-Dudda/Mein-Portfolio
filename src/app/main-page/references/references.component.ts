@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, HostListener, NgZone, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RefCardsComponent } from './ref-cards/ref-cards.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -26,7 +26,11 @@ export class ReferencesComponent implements AfterViewInit {
   isMobile = false;
   isFlipping = false;
 
-  constructor(private animationService: AnimationService) {}
+  constructor(
+    private animationService: AnimationService,
+    private ngZone: NgZone,
+    private cdRef: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
     if (this.refContainer) {
@@ -35,16 +39,25 @@ export class ReferencesComponent implements AfterViewInit {
     if (this.refWrapper) {
       this.animationService.observeElement(this.refWrapper.nativeElement);
     }
-    this.checkScreenSize();
+    // Bildschirmgröße wird außerhalb von Angular überwacht, um Fehler zu vermeiden
+    this.ngZone.runOutsideAngular(() => {
+      this.checkScreenSize();
+    });
   }
 
   @HostListener('window:resize', [])
   onResize(): void {
-    this.checkScreenSize();
+    // Bildschirmgröße wird außerhalb von Angular überwacht, um Fehler zu vermeiden
+    this.ngZone.runOutsideAngular(() => {
+      this.checkScreenSize();
+    });
   }
 
   checkScreenSize(): void {
     this.isMobile = window.innerWidth <= 800;
+
+    // Benachrichtige Angular nach der Änderung der Bildschirmgröße
+    this.cdRef.detectChanges();
   }
 
   selectCard(index: number): void {

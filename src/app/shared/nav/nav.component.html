@@ -6,7 +6,7 @@
     </a>
 
     <!-- Nur anzeigen, wenn wir nicht auf der PrivacyPage sind -->
-    <ng-container *ngIf="!isPrivacyPage">
+    <ng-container >
       <!-- Hauptlinks (Desktop) -->
       <a class="nav-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
       <a class="nav-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
@@ -22,10 +22,10 @@
 
       <!-- Burger Menü Links (wird nur bei Klick angezeigt) -->
       <div class="burger-menu" *ngIf="burgerMenuOpen">
-        <a class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
-        <a class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
-        <a class="burger-menu-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
-        <a class="burger-menu-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
+        <a *ngIf="!isPrivacyPage" class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
+        <a *ngIf="!isPrivacyPage" class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
+        <a *ngIf="!isPrivacyPage" class="burger-menu-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
+        <a *ngIf="!isPrivacyPage" class="burger-menu-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
         <div class="language">
           <span class="DE" (click)="switchLanguage('de')">DE</span>
           <div class="vertical-border"></div>

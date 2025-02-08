@@ -9,14 +9,13 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-contact-me',
   standalone: true,
   imports: [TranslateModule,
-            FormsModule
+            FormsModule,
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
 
-  
 
   http = inject(HttpClient);
 

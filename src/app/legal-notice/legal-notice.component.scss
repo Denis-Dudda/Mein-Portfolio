@@ -1,0 +1,18 @@
+@import '../../styles.scss';
+
+.legal-container{
+    @include dFlex();
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    h1{
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}

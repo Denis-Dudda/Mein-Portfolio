@@ -11,7 +11,7 @@
       <a href="/privacy">Privacy policy</a>
     </div>
 
-    <div *ngIf="isPrivacyPage">
+    <div *ngIf="isPrivacyPage || isLegalPage">
         <button (click)="navigateToHome()" class="button"></button>
     </div>
   </section>

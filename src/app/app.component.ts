@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -23,12 +23,12 @@ import { filter } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
   title = 'mein-portfolio';
-  private lastScrollTime = 0;
-  private scrollThrottleDelay = 200;
-  private scrollFactor = 8;
   private isMainPage = false;
+
+  private lastScrollTime = 0;  // Zeitstempel des letzten Scrollens
+  private maxScrollSpeed = 800;  // Maximale horizontale Scroll-Geschwindigkeit (in px/s)
 
   constructor(private translate: TranslateService, private router: Router) {
     this.translate.addLangs(['de', 'en']);
@@ -40,67 +40,64 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       this.isMainPage = event.url === '/' || event.url === '/main';
-      this.updateScrollBehavior();
-      this.updateBodyOverflow(); // Body overflow je nach Route anpassen
     });
   }
 
+  ngOnInit(): void {
+    // Überprüfe beim Initialisieren die Fensterbreite
+    this.checkWindowWidth();
+
+    // Füge einen EventListener hinzu, um die Fenstergröße bei Änderungen zu überwachen
+    window.addEventListener('resize', this.checkWindowWidth.bind(this));
+
+    // EventListener für das scrollen (wheel) hinzufügen mit passive: false
+    window.addEventListener('wheel', this.onWheelScroll.bind(this), { passive: false });
+  }
+
   ngAfterViewInit(): void {
-    if (typeof window !== 'undefined') {
-      const savedScrollPosition = localStorage.getItem('scrollLeft');
-      if (savedScrollPosition) {
-        window.scrollTo({ left: parseInt(savedScrollPosition, 10), behavior: 'auto' });
-      }
-      this.updateScrollBehavior();
-      this.updateBodyOverflow(); // Sicherstellen, dass overflow beim ersten Laden korrekt gesetzt ist
-    }
+    // Sicherstellen, dass keine scroll-bezogenen Anpassungen gemacht werden
   }
 
   ngOnDestroy(): void {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('wheel', this.handleWheel);
+    // Entferne den EventListener bei der Zerstörung der Komponente
+    window.removeEventListener('resize', this.checkWindowWidth.bind(this));
+    window.removeEventListener('wheel', this.onWheelScroll.bind(this));
+  }
+
+  // Funktion, um die Fenstergröße zu überprüfen und bei Bedarf eine Nachricht auszugeben
+  private checkWindowWidth(): void {
+    if (window.innerWidth > 800) {
+      console.log('Klappen');
     }
   }
 
-  private updateScrollBehavior(): void {
-    if (typeof window === 'undefined') return;
+  // Funktion, um das horizontale Scrollen zu berechnen und durchzuführen
+  private onWheelScroll(event: WheelEvent): void {
+    if (window.innerWidth > 800) {
+      // Verhindert das Standardverhalten (vertikales Scrollen)
+      event.preventDefault();
 
-    window.removeEventListener('wheel', this.handleWheel);
+      // Berechne die horizontale Scroll-Entfernung basierend auf dem deltaY-Wert
+      const scrollSpeedFactor = 3;  // Standardmäßige Scrollgeschwindigkeit in Pixeln pro deltaY-Einheit
+      const horizontalScroll = event.deltaY * scrollSpeedFactor;
 
-    if (this.isMainPage) {
-      window.addEventListener('wheel', this.handleWheel, { passive: false });
-    }
-  }
+      // Berechne die Zeit, die zum Scrollen dieser Entfernung benötigt wird
+      const scrollTime = Math.abs(horizontalScroll) / this.maxScrollSpeed * 500;  // Zeit in Millisekunden
 
-  private updateBodyOverflow(): void {
-    // Wenn wir auf der MainPage sind, horizontal scrollen erlauben
-    if (this.isMainPage) {
-      document.body.style.overflowX = 'auto';
-      document.body.style.overflowY = 'hidden'; // Vertikal deaktivieren
-    } else {
-      document.body.style.overflowX = 'hidden'; // Horizontal deaktivieren
-      document.body.style.overflowY = 'auto';  // Vertikal aktivieren
-    }
-  }
+      // Berechne den aktuellen Zeitpunkt
+      const now = Date.now();
 
-  private handleWheel = (event: WheelEvent) => {
-    if (!this.isMainPage) return;
+      // Wenn die Zeit seit dem letzten Scrollen länger als die benötigte Zeit ist, dann scrollen
+      if (now - this.lastScrollTime > scrollTime) {
+        // Führe das Scrollen durch
+        window.scrollBy({
+          left: horizontalScroll,  // Scrollt horizontal mit der berechneten Geschwindigkeit
+          behavior: 'smooth'        // Optional: für ein sanftes Scrollen
+        });
 
-    event.preventDefault();
-    const isSmallScreen = window.innerWidth < 801;
-    const now = Date.now();
-
-    if (now - this.lastScrollTime > this.scrollThrottleDelay) {
-      this.lastScrollTime = now;
-      const scrollAmount = event.deltaY * this.scrollFactor;
-
-      if (isSmallScreen) {
-        window.scrollTo({ top: window.scrollY + scrollAmount, behavior: 'smooth' });
-      } else {
-        const newScrollLeft = window.scrollX + scrollAmount;
-        localStorage.setItem('scrollLeft', newScrollLeft.toString());
-        window.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
+        // Speichere die Zeit des letzten Scrollens
+        this.lastScrollTime = now;
       }
     }
-  };
+  }
 }

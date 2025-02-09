@@ -54,5 +54,60 @@
         "description": "Whether your project involves developing a new application, upgrading existing systems, or implementing robust cybersecurity measures, I have the technical acumen and problem-solving skills to ensure successful outcomes.",
         "legal_notice": "Legal noctice",
         "policy": "Privacy policy"
+    },
+"PRIVACY": {
+    "title": "Privacy Policy",
+    "general_info": {
+      "title": "1. Data Protection at a Glance",
+      "description": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any information that can be used to identify you personally. Detailed information on the subject of data protection can be found in our privacy policy below this text."
+    },
+    "data_collection": {
+      "title": "2. Data Collection on this Website",
+      "responsible": "Who is responsible for the data collection on this website?",
+      "how": "How do we collect your data?",
+      "purpose": "What do we use your data for?",
+      "rights": "What rights do you have regarding your data?"
+    },
+    "hosting": {
+      "title": "3. Hosting",
+      "provider": "All-Inkl",
+      "details": "The provider is ALL-INKL.COM - Neue Medien Münnich."
+    },
+    "data_protection": {
+      "title": "Data Protection",
+      "description": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the legal data protection regulations and this privacy policy."
+    },
+    "responsible_entity": {
+      "title": "Notice to the Responsible Entity",
+      "description": "The responsible entity for data processing on this website is: Denis Dudda, Böckelweiherstrasse 5, 83483 Bischofswiesen, Phone: +49 (0) 1733267162, E-mail: denis.d@hotmail.de"
+    },
+    "storage_duration": {
+      "title": "Storage Duration",
+      "description": "As long as no more specific storage duration is stated in this privacy policy, your personal data will remain with us until the purpose for data processing is no longer applicable."
+    },
+    "legal_basis": {
+      "title": "Legal Basis of Data Processing",
+      "description": "If you have given consent to the data processing, we process your personal data based on Art. 6 (1) lit. a of the GDPR. If your data is required for the fulfillment of a contract, we process it based on Art. 6 (1) lit. b of the GDPR."
+    },
+    "consent_withdrawal": {
+      "title": "Withdrawal of Your Consent to Data Processing",
+      "description": "Many data processing operations are only possible with your explicit consent. You can withdraw your consent at any time."
+    },
+    "complaint_right": {
+      "title": "Right to Lodge a Complaint with the Supervisory Authority",
+      "description": "In case of violations of the GDPR, you have the right to lodge a complaint with a supervisory authority."
+    },
+    "data_transfer": {
+      "title": "Right to Data Portability",
+      "description": "You have the right to have data that we process automatically based on your consent or in the fulfillment of a contract handed over to you or to a third party in a commonly used, machine-readable format."
+    },
+    "access_correction_deletion": {
+      "title": "Right to Access, Rectification, and Deletion",
+      "description": "You have the right to obtain free information about your stored personal data at any time, as well as the right to correct or delete this data."
+    },
+    "processing_restriction": {
+      "title": "Right to Restrict Processing",
+      "description": "You have the right to request the restriction of the processing of your personal data."
     }
+  }
 }

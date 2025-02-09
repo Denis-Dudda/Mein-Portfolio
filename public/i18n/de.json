@@ -54,5 +54,63 @@
         "description": "Ob dein Projekt die Entwicklung einer neuen Anwendung, die Aktualisierung bestehender Systeme oder die Implementierung robuster Cybersicherheitsmaßnahmen umfasst, ich besitze die technische Kompetenz und Problemlösungsfähigkeiten, um erfolgreiche Ergebnisse sicherzustellen.",
         "legal_notice": "Rechtshinweis",
         "policy": "Datenschutzrichtlinie"
-}
-}
+    },
+    
+    "PRIVACY": {
+      "title": "Privacy Policy",
+      "general_info": {
+        "title": "1. Datenschutz auf einen Blick",
+        "description": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung."
+      },
+      "data_collection": {
+        "title": "2. Datenerfassung auf dieser Website",
+        "responsible": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+        "how": "Wie erfassen wir Ihre Daten?",
+        "purpose": "Wofür nutzen wir Ihre Daten?",
+        "rights": "Welche Rechte haben Sie bezüglich Ihrer Daten?"
+      },
+      "hosting": {
+        "title": "3. Hosting",
+        "provider": "All-Inkl",
+        "details": "Der Anbieter ist ALL-INKL.COM - Neue Medien Münnich."
+      },
+      "data_protection": {
+        "title": "Datenschutz",
+        "description": "Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung."
+      },
+      "responsible_entity": {
+        "title": "Hinweis zur verantwortlichen Stelle",
+        "description": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist: Denis Dudda, Böckelweiherstrasse 5, 83483 Bischofswiesen, Telefon: +49 (0) 1733267162, E-Mail: denis.d@hotmail.de"
+      },
+      "storage_duration": {
+        "title": "Speicherdauer",
+        "description": "Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt."
+      },
+      "legal_basis": {
+        "title": "Rechtsgrundlagen der Datenverarbeitung",
+        "description": "Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO. Sind Ihre Daten zur Vertragserfüllung erforderlich, verarbeiten wir diese auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO."
+      },
+      "consent_withdrawal": {
+        "title": "Widerruf Ihrer Einwilligung zur Datenverarbeitung",
+        "description": "Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen."
+      },
+      "complaint_right": {
+        "title": "Beschwerderecht bei der zuständigen Aufsichtsbehörde",
+        "description": "Im Falle von Verstößen gegen die DSGVO steht Ihnen ein Beschwerderecht bei einer Aufsichtsbehörde zu."
+      },
+      "data_transfer": {
+        "title": "Recht auf Datenübertragbarkeit",
+        "description": "Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen."
+      },
+      "access_correction_deletion": {
+        "title": "Auskunft, Berichtigung und Löschung",
+        "description": "Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten."
+      },
+      "processing_restriction": {
+        "title": "Recht auf Einschränkung der Verarbeitung",
+        "description": "Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen."
+      }
+    }
+ }
+
+

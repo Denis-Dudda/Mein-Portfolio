@@ -40,7 +40,7 @@
   }
   
   .button::after {
-    content: "Back to";
+    content: "Back";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,4 +112,10 @@
     .button{
         top: 120px;
     }
+}
+
+@media (max-width: 560px) {
+  .button{
+    right: auto;
+  }
 }

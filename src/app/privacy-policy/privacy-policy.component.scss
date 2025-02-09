@@ -6,7 +6,17 @@
 
 section{
     margin: 24px 24px 77px 220px;
-    
+    h1{
+        font-size: 32px;
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+    h2,h3,h4{
+        color: var(--primary-color);
+    }
+    h2{
+        text-decoration: underline;
+    }
 }
 
 @media (max-width:800px) {
@@ -15,6 +25,8 @@ section{
     }
 }
 
-@media (min-width:800px) {
-
+@media (max-width:560px) {
+    section{
+        padding-top: 68px;
+    }
 }

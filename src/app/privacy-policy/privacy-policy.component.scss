@@ -30,3 +30,11 @@ section{
         padding-top: 68px;
     }
 }
+
+@media (max-width:380px) {
+    section{
+        h1{
+            font-size: 27px;
+        }
+    }
+}

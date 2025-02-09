@@ -25,8 +25,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
   title = 'mein-portfolio';
-  private isMainPage = false;
-
+  private isMainPage = false; // Speichert, ob wir uns auf der Hauptseite befinden
   private lastScrollTime = 0;  // Zeitstempel des letzten Scrollens
   private maxScrollSpeed = 800;  // Maximale horizontale Scroll-Geschwindigkeit (in px/s)
 
@@ -39,6 +38,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      // Überprüfe, ob die aktuelle Route die Hauptseite ist
       this.isMainPage = event.url === '/' || event.url === '/main';
     });
   }
@@ -50,7 +50,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     // Füge einen EventListener hinzu, um die Fenstergröße bei Änderungen zu überwachen
     window.addEventListener('resize', this.checkWindowWidth.bind(this));
 
-    // EventListener für das scrollen (wheel) hinzufügen mit passive: false
+    // EventListener für das Scrollen (wheel) hinzufügen mit passive: false
     window.addEventListener('wheel', this.onWheelScroll.bind(this), { passive: false });
   }
 
@@ -64,15 +64,20 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     window.removeEventListener('wheel', this.onWheelScroll.bind(this));
   }
 
-  // Funktion, um die Fenstergröße zu überprüfen und bei Bedarf eine Nachricht auszugeben
+  // Funktion, um die Fenstergröße zu überprüfen
   private checkWindowWidth(): void {
     if (window.innerWidth > 800) {
       console.log('Klappen');
     }
   }
 
-  // Funktion, um das horizontale Scrollen zu berechnen und durchzuführen
+  // Funktion, um das horizontale Scrollen nur auf der Hauptseite zu aktivieren
   private onWheelScroll(event: WheelEvent): void {
+    // Falls wir uns NICHT auf der Hauptseite befinden, normales Scrollen erlauben
+    if (!this.isMainPage) {
+      return;
+    }
+
     if (window.innerWidth > 800) {
       // Verhindert das Standardverhalten (vertikales Scrollen)
       event.preventDefault();

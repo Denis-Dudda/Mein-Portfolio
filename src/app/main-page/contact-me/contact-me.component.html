@@ -37,7 +37,7 @@
       <label for="policy">I've read the</label><a href="/privacy"> Privacy policy </a>
       <label for="policy">and agree to the processing<br> of my data as outlined.</label>
       <br><br>
-      <button type="submit">Submit</button>
+      <button type="submit"[disabled]="!contactForm.form.valid">Submit</button>
     </form>
   </div>
   <div class="impressum-container">

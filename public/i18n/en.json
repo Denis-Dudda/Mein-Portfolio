@@ -56,7 +56,11 @@
         "policy": "Privacy policy",
         "read":"I've read the",
         "agree": "and agree to the processing",
-        "myData": "of my data as outlined."
+        "myData": "of my data as outlined.",
+        "placeholderName": "Your Name",
+        "placeholderMail": "Your e-mail",
+        "placeholderMessage": "Your message",
+        "submit": "Submit"
     },
 "PRIVACY": {
     "title": "Privacy Policy",

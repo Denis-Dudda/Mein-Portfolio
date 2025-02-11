@@ -24,20 +24,20 @@
     <span>{{'CONTACT.contact_me' | translate}}</span>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
       
-      <input [(ngModel)]="contactData.name" class="name-mail" type="text" id="name" name="name" placeholder="Your name" required><br><br>
+      <input [(ngModel)]="contactData.name" class="name-mail" type="text" id="name" name="name" placeholder="{{'CONTACT.placeholderName' | translate}}" required><br><br>
     
       
-      <input [(ngModel)]="contactData.email" class="name-mail" type="email" id="email" name="email" placeholder="Your e-mail" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"><br><br>
+      <input [(ngModel)]="contactData.email" class="name-mail" type="email" id="email" name="email" placeholder="{{'CONTACT.placeholderMail' | translate}}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"><br><br>
     
       <br>
-      <textarea [(ngModel)]="contactData.message" id="message" name="message" rows="4" placeholder="Your message" required></textarea><br><br>
+      <textarea [(ngModel)]="contactData.message" id="message" name="message" rows="4" placeholder="{{'CONTACT.placeholderMessage' | translate}}" required></textarea><br><br>
     
       <input [(ngModel)]="contactData.policy" class="check-box" type="checkbox" id="policy" name="policy" required>
 
       <label for="policy">{{'CONTACT.read' | translate}}</label><a href="/privacy"> {{'CONTACT.policy' | translate}} </a>
       <label for="policy">{{'CONTACT.agree' | translate}}<br>{{'CONTACT.myData' | translate}}</label>
       <br><br>
-      <button type="submit"[disabled]="!contactForm.form.valid">Submit</button>
+      <button type="submit"[disabled]="!contactForm.form.valid">{{'CONTACT.submit' | translate}}</button>
     </form>
   </div>
   <div class="impressum-container">

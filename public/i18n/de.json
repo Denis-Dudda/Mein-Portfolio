@@ -56,7 +56,11 @@
         "policy": "Datenschutzrichtlinie",
         "read":"Ich habe die",
         "agree": "gelesen und stimme der Verarbeitung",
-        "myData": "meiner Daten gemäß den darin enthaltenen Bestimmungen zu."
+        "myData": "meiner Daten gemäß den darin enthaltenen Bestimmungen zu.",
+        "placeholderName": "Dein Name",
+        "placeholderMail": "Deine e-mail",
+        "placeholderMessage": "Deine Nachicht",
+        "submit": "Senden"
     },
     
     "PRIVACY": {

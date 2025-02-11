@@ -1,7 +1,7 @@
 @import '../../../../styles.scss';
 
 section{
-  @include dFlex($g:32px);
+  @include dFlex($g:20px);
   
   background-color: rgb(61,72,37);
   border-radius: 30px;

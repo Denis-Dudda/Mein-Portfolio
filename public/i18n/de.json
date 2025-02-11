@@ -53,7 +53,10 @@
         "let_us": "Lass uns zusammenarbeiten",
         "description": "Ob dein Projekt die Entwicklung einer neuen Anwendung, die Aktualisierung bestehender Systeme oder die Implementierung robuster Cybersicherheitsmaßnahmen umfasst, ich besitze die technische Kompetenz und Problemlösungsfähigkeiten, um erfolgreiche Ergebnisse sicherzustellen.",
         "legal_notice": "Rechtshinweis",
-        "policy": "Datenschutzrichtlinie"
+        "policy": "Datenschutzrichtlinie",
+        "read":"Ich habe die",
+        "agree": "gelesen und stimme der Verarbeitung",
+        "myData": "meiner Daten gemäß den darin enthaltenen Bestimmungen zu."
     },
     
     "PRIVACY": {

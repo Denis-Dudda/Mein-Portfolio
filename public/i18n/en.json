@@ -53,7 +53,10 @@
         "let_us": "Let us work together",
         "description": "Whether your project involves developing a new application, upgrading existing systems, or implementing robust cybersecurity measures, I have the technical acumen and problem-solving skills to ensure successful outcomes.",
         "legal_notice": "Legal noctice",
-        "policy": "Privacy policy"
+        "policy": "Privacy policy",
+        "read":"I've read the",
+        "agree": "and agree to the processing",
+        "myData": "of my data as outlined."
     },
 "PRIVACY": {
     "title": "Privacy Policy",

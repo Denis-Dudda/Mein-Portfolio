@@ -34,8 +34,8 @@
     
       <input [(ngModel)]="contactData.policy" class="check-box" type="checkbox" id="policy" name="policy" required>
 
-      <label for="policy">I've read the</label><a href="/privacy"> Privacy policy </a>
-      <label for="policy">and agree to the processing<br> of my data as outlined.</label>
+      <label for="policy">{{'CONTACT.read' | translate}}</label><a href="/privacy"> {{'CONTACT.policy' | translate}} </a>
+      <label for="policy">{{'CONTACT.agree' | translate}}<br>{{'CONTACT.myData' | translate}}</label>
       <br><br>
       <button type="submit"[disabled]="!contactForm.form.valid">Submit</button>
     </form>

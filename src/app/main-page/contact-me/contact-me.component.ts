@@ -22,7 +22,8 @@ export class ContactMeComponent {
   contactData = {
     name: "",
     email:"",
-    message: ""
+    message: "",
+    policy: false
   }
 
   mailTest = false;
@@ -39,11 +40,11 @@ export class ContactMeComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest && this.contactData.policy) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            
             ngForm.resetForm();
           },
           error: (error) => {

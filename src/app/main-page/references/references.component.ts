@@ -60,21 +60,22 @@ export class ReferencesComponent implements AfterViewInit {
     this.cdRef.detectChanges();
   }
 
-  selectCard(index: number): void {
+  selectCard(index: number): void { 
     if (index !== this.selectedCardIndex && !this.isFlipping) {
       this.isFlipping = true;
-
-      // Warten, bis die Karte sich dreht, dann den Index wechseln
+  
       setTimeout(() => {
         this.selectedCardIndex = index;
-      }, 250); // Wechsel nach der Hälfte der Animation (0.5s / 2)
-
-      // Warten, bis die Animation fertig ist
+        this.cdRef.detectChanges(); // Erzwinge eine UI-Aktualisierung
+      }, 400);
+  
       setTimeout(() => {
         this.isFlipping = false;
-      }, 500);
+        this.cdRef.detectChanges();
+      }, 800);
     }
   }
+  
 
   scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();

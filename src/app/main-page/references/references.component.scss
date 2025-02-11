@@ -188,5 +188,5 @@ section {
   }
   
   .flipping {
-    animation: flipAnimation 0.5s ease-in-out;
+    animation: flipAnimation 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
   }

@@ -7,8 +7,8 @@
   
     <!-- Links, nur anzeigen, wenn nicht auf der Privacy-Seite -->
     <div class="footer-main-mobile" *ngIf="!isPrivacyPage">
-      <a href="/legal">Legal notice</a>
-      <a href="/privacy">Privacy policy</a>
+      <a href="/legal">{{'CONTACT.legal_notice' | translate}}</a>
+      <a href="/privacy">{{'CONTACT.policy' | translate}}</a>
     </div>
 
     <div *ngIf="isPrivacyPage || isLegalPage">

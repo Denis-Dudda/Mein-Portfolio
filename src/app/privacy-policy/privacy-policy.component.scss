@@ -6,6 +6,8 @@
 
 section{
     margin: 24px 24px 77px 220px;
+    min-height: 100vh;
+    max-width: 600px;
     h1{
         font-size: 32px;
         color: var(--primary-color);

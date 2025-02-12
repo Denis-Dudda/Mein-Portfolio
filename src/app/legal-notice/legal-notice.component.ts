@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class LegalNoticeComponent {
   ngOnInit() {
-    console.log("LegalNoticeComponent wird geladen");
+    ("LegalNoticeComponent wird geladen");
   }
 }

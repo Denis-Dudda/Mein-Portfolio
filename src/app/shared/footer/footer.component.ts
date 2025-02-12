@@ -22,7 +22,6 @@ export class FooterComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.isPrivacyPage = event.url === '/privacy' || event.url === '/legal';
-        console.log('isPrivacyPage:', this.isPrivacyPage); 
       }
     });
   }

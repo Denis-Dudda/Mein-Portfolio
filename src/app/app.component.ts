@@ -44,12 +44,6 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    // Überprüfe beim Initialisieren die Fensterbreite
-    this.checkWindowWidth();
-
-    // Füge einen EventListener hinzu, um die Fenstergröße bei Änderungen zu überwachen
-    window.addEventListener('resize', this.checkWindowWidth.bind(this));
-
     // EventListener für das Scrollen (wheel) hinzufügen mit passive: false
     window.addEventListener('wheel', this.onWheelScroll.bind(this), { passive: false });
   }
@@ -60,15 +54,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
   ngOnDestroy(): void {
     // Entferne den EventListener bei der Zerstörung der Komponente
-    window.removeEventListener('resize', this.checkWindowWidth.bind(this));
     window.removeEventListener('wheel', this.onWheelScroll.bind(this));
-  }
-
-  // Funktion, um die Fenstergröße zu überprüfen
-  private checkWindowWidth(): void {
-    if (window.innerWidth > 800) {
-      console.log('Klappen');
-    }
   }
 
   // Funktion, um das horizontale Scrollen nur auf der Hauptseite zu aktivieren

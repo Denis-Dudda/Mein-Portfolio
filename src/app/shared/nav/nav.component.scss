@@ -27,7 +27,7 @@ nav {
   }
 
   .burger-menu {
-    display: none; // Standardmäßig ausblenden
+    display: none; 
     flex-direction: column;
     gap: 20px;
     position: absolute;
@@ -51,20 +51,20 @@ nav {
   }
 
   .burger-icon {
-    display: none; // Standardmäßig ausblenden
+    display: none; 
     flex-direction: column;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    position: relative; /* Damit wir das X zentrieren können */
+    position: relative; 
   
     span {
       display: block;
       width: 30px;
       height: 3px;
       background-color: var(--secondary-text-color);
-      transition: all 0.3s ease; /* Weiche Übergänge */
+      transition: all 0.3s ease; 
     }
   
     &.open {
@@ -75,7 +75,7 @@ nav {
       }
   
       span:nth-child(2) {
-        opacity: 0; /* Entfernt den mittleren Balken */
+        opacity: 0; 
       }
   
       span:nth-child(3) {
@@ -118,7 +118,7 @@ nav {
       direction: ltr;
       justify-content: space-between;
       .nav-links {
-        display: none; // Desktop-Links ausblenden
+        display: none; 
       }
 
       .nav-img-container {
@@ -131,12 +131,12 @@ nav {
       }
 
       .burger-icon {
-        display: flex; // Burger-Icon einblenden
+        display: flex; 
         padding-right: 16px;
       }
 
       .burger-menu {
-        display: flex; // Burger-Menü bei Klick einblenden
+        display: flex; 
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
       }

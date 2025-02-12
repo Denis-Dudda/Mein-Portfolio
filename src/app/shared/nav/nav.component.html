@@ -1,26 +1,18 @@
 <section>
   <nav>
-    <!-- Logo -->
     <a class="nav-img-container" (click)="scroll($event, 'home')">
       <img src="./img/DD.jpg" alt="">
     </a>
-
-    <!-- Nur anzeigen, wenn wir nicht auf der PrivacyPage sind -->
     <ng-container >
-      <!-- Hauptlinks (Desktop) -->
       <a *ngIf="!isPrivacyPage && !isLegalPage" class="nav-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
       <a *ngIf="!isPrivacyPage && !isLegalPage" class="nav-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>
       <a *ngIf="!isPrivacyPage && !isLegalPage" class="nav-links" (click)="scroll($event, 'my-work')">{{'NAV.my_work' | translate}}</a>
       <a *ngIf="!isPrivacyPage && !isLegalPage" class="nav-links" (click)="scroll($event, 'contact')">{{'NAV.contact' | translate}}</a>
-
-      <!-- Burger Menü Button (wird auf mobilen Geräten angezeigt) -->
       <button class="burger-icon" [ngClass]="{'open': burgerMenuOpen}" (click)="toggleBurgerMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      <!-- Burger Menü Links (wird nur bei Klick angezeigt) -->
       <div class="burger-menu" *ngIf="burgerMenuOpen">
         <a *ngIf="!isPrivacyPage && !isLegalPage" class="burger-menu-links" (click)="scroll($event, 'why-me')">{{'NAV.why_me' | translate}}</a>
         <a *ngIf="!isPrivacyPage && !isLegalPage" class="burger-menu-links" (click)="scroll($event, 'skills')">{{'NAV.skills' | translate}}</a>

@@ -14,16 +14,14 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class NavComponent implements OnInit {
   burgerMenuOpen = false;
-  isPrivacyPage: boolean = false; // Flag, um zu prüfen, ob wir auf der Privacy-Route sind
-  isLegalPage: boolean = false; // Flag, um zu prüfen, ob wir auf der Privacy-Route sind
+  isPrivacyPage: boolean = false; 
+  isLegalPage: boolean = false; 
 
   constructor(private animationService: AnimationService, private translate: TranslateService, private router: Router) {}
 
   ngOnInit(): void {
-    // Überwache Router-Ereignisse
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Überprüfen, ob die aktuelle Route die Privacy-Route ist
         this.isPrivacyPage = event.url === '/privacy' || event.url === '/legal';
       }
     });
@@ -36,7 +34,7 @@ export class NavComponent implements OnInit {
   scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();
     this.animationService.scrollToSection(event, targetId);
-    this.burgerMenuOpen = false; // Schließt das Burger-Menü
+    this.burgerMenuOpen = false; 
   }
 
   switchLanguage(language: string): void {

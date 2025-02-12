@@ -19,14 +19,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Quantico';
-   // overflow-y: hidden;
-   // overflow-x: auto; 
   }
   
   .contant-wrapper{
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: row; 
   }
 
   @mixin aGlow(){
@@ -81,8 +78,6 @@
     body{
       width: 100vw;
       height: 100%;
-     // overflow-y: scroll;
-     // overflow-x: hidden;
     }
 
     .contant-wrapper{

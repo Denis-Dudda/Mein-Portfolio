@@ -52,7 +52,7 @@
         "contact_me": "Kontaktiere mich",
         "let_us": "Lass uns zusammenarbeiten",
         "description": "Ob dein Projekt die Entwicklung einer neuen Anwendung, die Aktualisierung bestehender Systeme oder die Implementierung robuster Cybersicherheitsmaßnahmen umfasst, ich besitze die technische Kompetenz und Problemlösungsfähigkeiten, um erfolgreiche Ergebnisse sicherzustellen.",
-        "legal_notice": "Rechtshinweis",
+        "legal_notice": "Impressum",
         "policy": "Datenschutzrichtlinie",
         "read":"Ich habe die",
         "agree": "gelesen und stimme der Verarbeitung",
@@ -117,6 +117,11 @@
         "title": "Recht auf Einschränkung der Verarbeitung",
         "description": "Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen."
       }
+    },
+    "LEGAL": {
+      "legalNotice": "Impressum",
+      "contact": "Kontakt",
+      "phone": "Telefon"
     }
  }
 

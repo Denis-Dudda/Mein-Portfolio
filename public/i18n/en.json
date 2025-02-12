@@ -116,5 +116,10 @@
       "title": "Right to Restrict Processing",
       "description": "You have the right to request the restriction of the processing of your personal data."
     }
+  },
+  "LEGAL": {
+    "legalNotice": "Legal notice",
+    "contact": "Contact",
+    "phone": "Phone"
   }
 }

@@ -19,9 +19,9 @@ section{
   >span{
   font-size: 64px;
   font-weight: bold;
-  color: transparent; /* Der Text ist transparent */
-  -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-  background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+  color: transparent; 
+  -webkit-text-stroke: 1px var(--primary-color); 
+  background: transparent; 
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   }
@@ -37,8 +37,7 @@ form{
     padding-left: 24px;
     color: white;
     background-color: black;
-    &::placeholder{
-      
+    &::placeholder{      
       color: var(--primary-color);
     }
   }
@@ -61,50 +60,45 @@ form{
     color: var(--primary-color);
   }
   .check-box {
-    appearance: none; /* Deaktiviert das Standard-Browser-Styling */
+    appearance: none; 
     -webkit-appearance: none;
     border: 3px solid white;
     border-radius: 5px;
     width: 20px;
     height: 20px;
     background-color: transparent;
-    position: relative; /* Wichtig, um das Pseudoelement zu positionieren */
+    position: relative; 
     top: 7px;
-    cursor: pointer; /* Zeigt an, dass die Checkbox anklickbar ist */
+    cursor: pointer; 
     &:hover {
-      background: rgba(181, 233, 59, 0.4); /* Hintergrund beim Hover */
-    }
-  
+      background: rgba(181, 233, 59, 0.4); 
+    } 
     &:checked {
       background-color: transparent; 
       border-color: var(--primary-color);
-    }
-  
-    /* Pseudoelement für das Häkchen */
+    }  
+    
     &:before {
       content: ""; 
       position: absolute;
-      top: -1px;  /* Positionierung von oben */
-      left: 0px; /* Positionierung von links */
-      width: 14px; /* Breite des Häkchens */
-      height: 19px; /* Höhe des Häkchens */
-      display: none; /* Standardmäßig unsichtbar */
-      background-color: var(--primary-color); /* Die Farbe des Häkchens */
-      clip-path: polygon(29% 64%, 100% 0, 100% 11%, 26% 78%, 5% 52%, 12% 45%); /* Erzeugt das Häkchen in der Form */
-    }
-  
-    /* Wenn gecheckt, wird das Häkchen angezeigt */
+      top: -1px;  
+      left: 0px; 
+      width: 14px; 
+      height: 19px; 
+      display: none; 
+      background-color: var(--primary-color); 
+      clip-path: polygon(29% 64%, 100% 0, 100% 11%, 26% 78%, 5% 52%, 12% 45%); 
+    }  
+    
     &:checked:before {
-      display: block; /* Macht das Häkchen sichtbar */
+      display: block; 
     }
   }
-
     a {
       color: white;
       text-decoration: none;
       position: relative;
      }
-
       a::after {
       content: ''; 
       position: absolute;
@@ -115,7 +109,6 @@ form{
       background-color: var(--primary-color); 
       transition: width 0.3s ease, left 0.3s ease;
       }
-
       a:hover::after {
       width: 100%; 
       }
@@ -128,7 +121,6 @@ form{
     border: none;
     position: relative;
     left: 168px;
-
     &:hover{
       background: linear-gradient(160deg, #B5E93B, #547800);
       cursor: pointer;
@@ -150,6 +142,7 @@ form{
   h4{
     color: var(--primary-color);
   }
+
   a {
     color: white;
     text-decoration: none;
@@ -166,6 +159,7 @@ form{
       @include aGlow();
     }
   }
+
   >div{
     @include dFlex($g:8px);
     >img{
@@ -185,6 +179,7 @@ form{
       color: var(--primary-color);
     } 
   }
+
   a::after {
     content: ''; 
     position: absolute;
@@ -195,6 +190,7 @@ form{
     background-color: var(--primary-color); 
     transition: width 0.3s ease, left 0.3s ease;
   }
+
   a:hover::after {
     width: 100%; 
     left: 0; 
@@ -220,6 +216,7 @@ form{
     border-left: 3px solid white;
     height: 18px;
   }
+
   .DE,
   .EN{
     transition: color 0.2s ease-in-out;
@@ -255,6 +252,7 @@ form{
   .arrow-contact{
     display: none;
   }
+
   .impressum-container{
     position: relative;
     top: 122px;

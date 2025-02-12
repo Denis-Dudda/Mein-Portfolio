@@ -39,7 +39,6 @@ export class ReferencesComponent implements AfterViewInit {
     if (this.refWrapper) {
       this.animationService.observeElement(this.refWrapper.nativeElement);
     }
-    // Bildschirmgröße wird außerhalb von Angular überwacht, um Fehler zu vermeiden
     this.ngZone.runOutsideAngular(() => {
       this.checkScreenSize();
     });
@@ -47,7 +46,6 @@ export class ReferencesComponent implements AfterViewInit {
 
   @HostListener('window:resize', [])
   onResize(): void {
-    // Bildschirmgröße wird außerhalb von Angular überwacht, um Fehler zu vermeiden
     this.ngZone.runOutsideAngular(() => {
       this.checkScreenSize();
     });
@@ -55,22 +53,18 @@ export class ReferencesComponent implements AfterViewInit {
 
   checkScreenSize(): void {
     this.isMobile = window.innerWidth <= 800;
-
-    // Benachrichtige Angular nach der Änderung der Bildschirmgröße
     this.cdRef.detectChanges();
   }
 
   selectCard(index: number): void {
     if (index !== this.selectedCardIndex && !this.isFlipping) {
       this.isFlipping = true;
-  
-      
+        
       setTimeout(() => {
         this.selectedCardIndex = index;
         this.cdRef.detectChanges();
       }, 400); 
-  
-      
+        
       setTimeout(() => {
         this.isFlipping = false;
         this.cdRef.detectChanges();
@@ -78,7 +72,6 @@ export class ReferencesComponent implements AfterViewInit {
     }
   }
   
-
   scroll(event: MouseEvent, targetId: string): void {
     event.preventDefault();
     this.animationService.scrollToSection(event, targetId);

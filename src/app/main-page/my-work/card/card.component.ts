@@ -23,25 +23,23 @@ export interface Work {
 export class CardComponent implements OnInit {
   @Input() work?: Work;
 
-  isExpanded: boolean = true; // Standardmäßig offen für große Bildschirme
+  isExpanded: boolean = true; 
 
   ngOnInit(): void {
-    this.updateCardState(window.innerWidth); // Setze den Anfangszustand basierend auf der Fensterbreite
+    this.updateCardState(window.innerWidth); 
   }
 
-  // Überwache Änderungen der Fensterbreite
   @HostListener('window:resize', ['$event'])
   onResize(event: any): void {
     this.updateCardState(event.target.innerWidth);
   }
-
-  // Methode, die den Zustand der Karte basierend auf der Fensterbreite setzt
+ 
   private updateCardState(width: number): void {
-    this.isExpanded = width > 800; // Offen bei >800px, geschlossen bei <=800px
+    this.isExpanded = width > 800;
   }
 
   toggleExpand(): void {
-    this.isExpanded = !this.isExpanded; // Zustand manuell umschalten
+    this.isExpanded = !this.isExpanded; 
   }
 
   navigateTo(url: string | undefined): void {

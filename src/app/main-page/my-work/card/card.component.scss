@@ -2,7 +2,6 @@
 
 section{
   @include dFlex($g:20px);
-  
   background-color: rgb(61,72,37);
   border-radius: 30px;
   padding: 0px 0px 0px 32px;
@@ -21,9 +20,9 @@ section{
     margin-block-start: 0.0em;
     margin-block-end: 0.0em;
     font-weight: bold;
-    color: transparent; /* Der Text ist transparent */
-    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    color: transparent; 
+    -webkit-text-stroke: 1px var(--primary-color); 
+    background: transparent; 
   }
   >h3{
     font-size: 48px;
@@ -33,14 +32,15 @@ section{
 
 .projekt-description-container{
   height: 100%;
+  
   ul{
-    padding-inline-start: 0px;
-    
+    padding-inline-start: 0px;   
     list-style-type: circle;
   }
+
   span,li{
     color: white;
-    word-wrap: break-word; /* Ermöglicht den automatischen Umbruch von langen Wörtern */
+    word-wrap: break-word; 
     white-space: normal;
   }
 }
@@ -69,6 +69,7 @@ section{
     cursor: pointer;
    }    
   }
+  
   .color-button{
   border-radius: 30px;
   width: 135px;

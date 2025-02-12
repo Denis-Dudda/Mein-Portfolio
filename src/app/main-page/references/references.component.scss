@@ -4,7 +4,6 @@ section {
   @include dFlex();
   height: 780px;
 
-  /* Wrapper für Karten */
   .ref-card-wrapper {
     @include dFlex($jc: flex-end, $g: 32px);
     flex-direction: column;
@@ -23,7 +22,7 @@ section {
   .card-container {
     display: flex;
     gap: 32px;
-    flex-direction: column; /* Alle Karten untereinander im Desktop-Modus */
+    flex-direction: column; 
     width: 100%;
   }
 
@@ -66,7 +65,6 @@ section {
     }
   }
 
-  /* Container für den Titel */
   .ref-title-container {
     height: 100%;
     opacity: 0;
@@ -82,11 +80,11 @@ section {
   h2 {
     font-size: 64px;
     font-weight: bold;
-    color: transparent; /* Der Text ist transparent */
-    -webkit-text-stroke: 1px var(--primary-color); /* Rand um den Text */
-    background: transparent; /* Verhindert Hintergrundfarbe */
+    color: transparent; 
+    -webkit-text-stroke: 1px var(--primary-color); 
+    background: transparent; 
     transform: rotate(180deg);
-    writing-mode: vertical-rl; /* Text vertikal */
+    writing-mode: vertical-rl; 
   }
 
   h3{
@@ -99,24 +97,22 @@ section {
 
 }  
 
-  /* Mobile-spezifische Styles */
   @media (max-width: 800px) {
     .arrow-references {
-      display: none; /* Pfeil in der mobilen Ansicht ausblenden */
+      display: none; 
     }
 
     section {
       height: auto;
       flex-direction: column;
       h2 {
-        transform: rotate(0deg); /* Text horizontal */
-        writing-mode: lr; /* Text wieder normal ausrichten */
+        transform: rotate(0deg); 
+        writing-mode: lr; 
       }
     }
 
-    /* Anzeige der Karten als Einzelfenster im Mobile-Modus */
     .card-container {
-      display: block; /* Nur eine Karte im Mobile-Modus */
+      display: block; 
     }
 
     .card-buttons {
@@ -139,7 +135,6 @@ section {
     }
   }
 
-  /* Weitere Anpassungen für kleinere Geräte */
   @media (max-width: 800px){
     section{
       h2{
@@ -175,7 +170,6 @@ section {
         height: auto;
       }
     }
-
   }
 
   @keyframes flipAnimation {

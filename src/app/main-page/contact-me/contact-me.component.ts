@@ -4,12 +4,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AnimationService } from '../../services/animation.service';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
   imports: [TranslateModule,
             FormsModule,
+            RouterLink
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
@@ -44,7 +46,7 @@ export class ContactMeComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            
+                        
             ngForm.resetForm();
           },
           error: (error) => {

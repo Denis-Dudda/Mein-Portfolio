@@ -49,7 +49,7 @@ export class MyWorkComponent implements AfterViewInit{
     },    
     {
       projektNumber: '3',
-      projektName: 'Da Bubble',
+      projektName: 'PokéDex',
       aboutTheProjekt: 'WORK.about_description_project_3',
       technologies: 'WORK.tech-description_project_3',
       description: 'WORK.learned_description_project_3',

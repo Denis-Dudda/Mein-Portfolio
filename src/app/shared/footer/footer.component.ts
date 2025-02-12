@@ -13,8 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent implements OnInit {
 
-  isPrivacyPage: boolean = false; // Flag, um zu prüfen, ob wir auf der Privacy-Route sind
-  isLegalPage: boolean = false; // Flag, um zu prüfen, ob wir auf der Privacy-Route sind
+  isPrivacyPage: boolean = false; 
+  isLegalPage: boolean = false; 
 
   constructor(private animationService: AnimationService, private translate: TranslateService, private router: Router) {}
 
@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.isPrivacyPage = event.url === '/privacy' || event.url === '/legal';
-        console.log('isPrivacyPage:', this.isPrivacyPage); // Hier wird der Wert von isPrivacyPage überprüft
+        console.log('isPrivacyPage:', this.isPrivacyPage); 
       }
     });
   }
@@ -37,7 +37,7 @@ export class FooterComponent implements OnInit {
   }
 
   navigateToHome(): void {
-    this.router.navigate(['/']); // Hier kannst du auch eine andere Route angeben, wenn nötig
+    this.router.navigate(['/']); 
   }
 
 }

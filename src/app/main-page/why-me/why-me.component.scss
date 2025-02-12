@@ -2,11 +2,11 @@
 
 section {
   @include dFlex($g: 16px);
-  opacity: 0;  // Standardmäßig unsichtbar
-  transform: translateY(-20px);  // Startposition für die Animation
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
+  opacity: 0;  
+  transform: translateY(-20px);  
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  
 
-  &.visible {  // Wenn sichtbar, wird die Animation aktiviert
+  &.visible {  
     opacity: 1;
     transform: translateY(0);
   }
@@ -14,9 +14,9 @@ section {
   > .why-me {
     font-size: 64px;
     font-weight: bold;
-    color: transparent; /* Der Text ist transparent */
-    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    color: transparent; 
+    -webkit-text-stroke: 1px var(--primary-color); 
+    background: transparent; 
     transform: rotate(180deg);
     writing-mode: vertical-rl;
   }
@@ -66,7 +66,6 @@ section {
     }
   }
 
-  /* Location Icon */
   .location-icon-wrapper {
     display: flex;
     flex-direction: column;
@@ -89,7 +88,6 @@ section {
     }
   }
 
-  /* Notebook Icon */
   .notebook-icon-wrapper {
     display: flex;
     flex-direction: column;
@@ -118,7 +116,6 @@ section {
     }
   }
 
-  /* Luggage Icon */
   .laggage-icon-wrapper {
     display: flex;
     flex-direction: column;

@@ -11,7 +11,7 @@ import { AnimationService } from '../../services/animation.service';
 })
 export class WhyMeComponent implements AfterViewInit {
 
-  @ViewChild('whyMeSection') whyMeSection!: ElementRef;  // Hier referenzieren wir das Element, das beobachtet werden soll
+  @ViewChild('whyMeSection') whyMeSection!: ElementRef; 
 
   constructor(private animationService: AnimationService) {}
 

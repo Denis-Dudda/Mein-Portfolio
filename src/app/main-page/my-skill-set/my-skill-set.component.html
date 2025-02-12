@@ -6,10 +6,8 @@
   <div>
     <span>{{'SKILLS.description' | translate}}</span>
     <div class="grid-wrapper">
-      <div *ngFor="let icon of icons; let i = index" class="icon-container" [style.animationDelay]="i * 0.2 + 's'">
-        
-          <img [src]="icon.src" [alt]="icon.label">
-        
+      <div *ngFor="let icon of icons; let i = index" class="icon-container" [style.animationDelay]="i * 0.2 + 's'">        
+          <img [src]="icon.src" [alt]="icon.label">       
         <span>{{icon.property}}</span>
       </div>
       <span 

@@ -30,8 +30,6 @@ section{
   }
 }
 
-
-
 div{
   @include dFlex();
   flex-direction: column;
@@ -39,15 +37,13 @@ div{
     font-size: 68px;
     color:var(--primary-color);
 
-
-
   }
   > h2 {
     font-size: 48px;
     font-weight: bold;
-    color: transparent; /* Der Text ist transparent */
-    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    color: transparent; 
+    -webkit-text-stroke: 1px var(--primary-color); 
+    background: transparent; 
     margin-block-start: -1.17em;
     margin-block-end: -7.17em;
     margin-inline-start: 214px;
@@ -57,12 +53,12 @@ div{
 }
 
 .fade-in-normal {
-  animation: fade-in-bottom-normal 1s ease-in-out 0s 1 normal forwards; /* Endzustand bleibt sichtbar */
-  opacity: 0; /* Sicherstellen, dass es unsichtbar startet */
+  animation: fade-in-bottom-normal 1s ease-in-out 0s 1 normal forwards; 
+  opacity: 0; 
 }
 
 .delay {
-  animation-delay: 0.5s; /* Verzögert die Animation des Untertitels */
+  animation-delay: 0.5s; 
 }
 
 @keyframes fade-in-bottom-normal {

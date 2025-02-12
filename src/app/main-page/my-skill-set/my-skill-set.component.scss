@@ -2,38 +2,38 @@
 
 section{
 @include dFlex();
-width: 980px;
-height: 400px; 
-opacity: 0;  // Standardmäßig unsichtbar
-transform: translateY(-20px);  // Startposition für die Animation
-transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
-&.visible {  // Wenn sichtbar, wird die Animation aktiviert
-  opacity: 1;
-  transform: translateY(0);
-}
- >span{
-  font-size: 64px;
-  font-weight: bold;
-  color: transparent; /* Der Text ist transparent */
-  -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
-  background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
- }
- >div{
-  @include dFlex($ai:flex-start);
-  flex-direction: column;
-  height: 400px;
-  >span{
-    color: white;
-    padding-left: 28px;
-    text-align: center;
+  width: 980px;
+  height: 400px; 
+  opacity: 0;  // Standardmäßig unsichtbar
+  transform: translateY(-20px);  // Startposition für die Animation
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;  // Übergang für Sichtbarkeit und Position
+  &.visible {  // Wenn sichtbar, wird die Animation aktiviert
+    opacity: 1;
+    transform: translateY(0);
   }
- }
-
- .mobile-button-wrapper{
-  display: none;
-}
+   >span{
+    font-size: 64px;
+    font-weight: bold;
+    color: transparent; /* Der Text ist transparent */
+    -webkit-text-stroke: 1px var(--primary-color); /* Definiert einen dünnen Rand um den Text */
+    background: transparent; /* Verhindert, dass der Text Hintergrundfarbe annimmt */
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+   }
+   >div{
+    @include dFlex($ai:flex-start);
+    flex-direction: column;
+    height: 400px;
+    >span{
+      color: white;
+      padding-left: 28px;
+      text-align: center;
+    }
+   }
+ 
+   .mobile-button-wrapper{
+    display: none;
+  }
 }
 
 .arrow-skill{
@@ -66,26 +66,29 @@ flex-direction: column;
     color: white;
     text-align: center;
   }
+
   span{
     color: white;
   }
+  
   img{
     transition: transform 0.3s ease;
     &:hover{
       @include aGlow();
     }
   }
+
   .icon-description {
     width: 200px;
     @include dFlex();
-    opacity: 0; /* Unsichtbar zu Beginn */
+    opacity: 0; 
     animation: fade-in-bottom-normal 0.5s ease-in-out forwards;
     text-align: center;
   }
 }
 
 .icon-container {
-  opacity: 0; /* Standardmäßig unsichtbar */
+  opacity: 0; 
   animation: fade-in-bottom-normal 0.5s ease-in-out 1s forwards;
 }
 
@@ -131,7 +134,6 @@ flex-direction: column;
   .grid-wrapper{
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px 100px;
-
 
     .icon-description{
       display: none;

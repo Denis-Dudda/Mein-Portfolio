@@ -1,6 +1,6 @@
 <section>
   <nav>
-    <a class="nav-img-container" (click)="scroll($event, 'home')">
+    <a [ngClass]="{ 'no-pointer': isPrivacyPage }" class="nav-img-container" (click)="scroll($event, 'home')">
       <img src="./img/DD.jpg" alt="">
     </a>
     <ng-container >

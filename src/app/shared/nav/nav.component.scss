@@ -109,6 +109,10 @@ nav {
   }
 }
 
+.no-pointer {
+  cursor: default !important; /* Normaler Pfeil statt Hand */
+}
+
 @media (max-width: 800px) {
   section {
     nav {

@@ -3,7 +3,10 @@
     src: url(../public/fonts/Quantico-Bold.ttf),
          url(../public/fonts/Quantico-BoldItalic.ttf),
          url(../public/fonts/Quantico-Italic.ttf),
-         url(../public/fonts/Quantico-Regular.ttf);
+         url(../public/fonts/Quantico-Regular.ttf),
+         url(../public/fonts/Quantico-Regular.woff2) format('woff2'),
+         url(../public/fonts/Quantico-Regular.woff) format('woff'),
+         url(../public/fonts/Quantico-Regular.ttf) format('truetype');
         } 
   
   html{

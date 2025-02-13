@@ -14,12 +14,17 @@ section{
   }
 }
 
-form{
+form {
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  .name-mail{
+
+  .form-group {
+    position: relative;
+  }
+
+  .name-mail {
     border: 1px solid var(--primary-color);
     border-radius: 50px;
     height: 40px;
@@ -27,11 +32,13 @@ form{
     padding-left: 24px;
     color: white;
     background-color: black;
-    &::placeholder{      
+
+    &::placeholder {
       color: var(--primary-color);
     }
   }
-  textarea{
+
+  textarea {
     border: 1px solid var(--primary-color);
     border-radius: 30px;
     height: 279px;
@@ -41,69 +48,77 @@ form{
     color: white;
     padding-left: 20px;
     padding-top: 24px;
-    &::placeholder{
+
+    &::placeholder {
       color: var(--primary-color);
       font-size: 16px;
     }
   }
-  label{
+
+  label {
     color: var(--primary-color);
   }
+
   .check-box {
-    appearance: none; 
+    appearance: none;
     -webkit-appearance: none;
     border: 3px solid white;
     border-radius: 5px;
     width: 20px;
     height: 20px;
     background-color: transparent;
-    position: relative; 
+    position: relative;
     top: 7px;
-    cursor: pointer; 
+    cursor: pointer;
+
     &:hover {
-      background: rgba(181, 233, 59, 0.4); 
-    } 
+      background: rgba(181, 233, 59, 0.4);
+    }
+
     &:checked {
-      background-color: transparent; 
+      background-color: transparent;
       border-color: var(--primary-color);
-    }  
-    
+    }
+
     &:before {
-      content: ""; 
+      content: "";
       position: absolute;
-      top: -1px;  
-      left: 0px; 
-      width: 14px; 
-      height: 19px; 
-      display: none; 
-      background-color: var(--primary-color); 
-      clip-path: polygon(29% 64%, 100% 0, 100% 11%, 26% 78%, 5% 52%, 12% 45%); 
-    }  
-    
+      top: -1px;
+      left: 0px;
+      width: 14px;
+      height: 19px;
+      display: none;
+      background-color: var(--primary-color);
+      clip-path: polygon(29% 64%, 100% 0, 100% 11%, 26% 78%, 5% 52%, 12% 45%);
+    }
+
     &:checked:before {
-      display: block; 
+      display: block;
     }
   }
-    a {
-      color: white;
-      text-decoration: none;
-      position: relative;
-     }
-      a::after {
-      content: ''; 
+
+  a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
       position: absolute;
-      bottom: 0; 
+      bottom: 0;
       left: 0;
-      width: 0; 
-      height: 2px; 
-      background-color: var(--primary-color); 
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
       transition: width 0.3s ease, left 0.3s ease;
-      }
-      a:hover::after {
-      width: 100%; 
-      }
-  
-  button{
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  button {
     border-radius: 30px;
     width: 135px;
     height: 44px;
@@ -111,15 +126,26 @@ form{
     border: none;
     position: relative;
     left: 168px;
-    &:hover{
+
+    &:hover {
       background: linear-gradient(160deg, #B5E93B, #547800);
       cursor: pointer;
     }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
   }
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    opacity: 0.6;
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%; /* Plaziert die Fehlermeldung direkt unter dem Input */
+    left: 0;
+    transform: translateY(4px); /* Verhindert das Verschieben des Layouts */
   }
 }
 

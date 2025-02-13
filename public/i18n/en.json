@@ -62,7 +62,7 @@
         "placeholderMessage": "Your message",
         "submit": "Submit",
         "errorMessageName": "Use at least 5 characters",
-        "errorMessageMail": "Missing '@' or '.'",
+        "errorMessageMail": "Please provide a valid email address",
         "errorMessageText": "Use at least 15 characters",
         "errorBoxMessage": "You must agree to the privacy policy to proceed."
     },

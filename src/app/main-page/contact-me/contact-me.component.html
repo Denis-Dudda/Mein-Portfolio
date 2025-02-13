@@ -42,9 +42,12 @@
   
     <!-- Privacy -->
     <div class="form-group">
-      <label for="policy">
-        <input type="checkbox" id="policy" name="policy" [(ngModel)]="contactData.policy" #policy="ngModel" required/>{{ 'PRIVACY.title' | translate }}
+      <label for="policy">{{'CONTACT.read' | translate}}</label>
+      <input type="checkbox" id="policy" name="policy" [(ngModel)]="contactData.policy" #policy="ngModel" required/>
+      <label class="policy-label" [routerLink]="'/privacy'" for="policy">
+        {{ 'PRIVACY.title' | translate }}
       </label>
+      <label for="policy">{{'CONTACT.agree' | translate}}<br>{{'CONTACT.myData' | translate}}</label>
       <div *ngIf="policy.invalid && policy.touched" class="error-message">{{ 'CONTACT.errorBoxMessage' | translate }}</div>
     </div>
   

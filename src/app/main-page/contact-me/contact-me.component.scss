@@ -30,7 +30,7 @@ form {
     height: 40px;
     width: 460px;
     padding-left: 24px;
-    color: white;
+    color: var(--primary-color);
     background-color: black;
 
     &::placeholder {
@@ -45,10 +45,10 @@ form {
     width: 460px;
     background-color: black;
     resize: none;
-    color: white;
+    color: var(--primary-color);
     padding-left: 20px;
     padding-top: 24px;
-
+    margin-top: 16px;
     &::placeholder {
       color: var(--primary-color);
       font-size: 16px;
@@ -59,62 +59,30 @@ form {
     color: var(--primary-color);
   }
 
-  .check-box {
-    appearance: none;
-    -webkit-appearance: none;
-    border: 3px solid white;
-    border-radius: 5px;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    position: relative;
-    top: 7px;
-    cursor: pointer;
-
-    &:hover {
-      background: rgba(181, 233, 59, 0.4);
-    }
-
-    &:checked {
-      background-color: transparent;
-      border-color: var(--primary-color);
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: 0px;
-      width: 14px;
-      height: 19px;
-      display: none;
-      background-color: var(--primary-color);
-      clip-path: polygon(29% 64%, 100% 0, 100% 11%, 26% 78%, 5% 52%, 12% 45%);
-    }
-
-    &:checked:before {
-      display: block;
-    }
-  }
-
-  a {
+  .policy-label {
     color: white;
-    text-decoration: none;
-    position: relative;
-
-    &::after {
+    position: relative; /* Damit der Balken absolut positioniert werden kann */
+    
+    /* Hover-Effekt für den Text */
+    &:hover {
+      cursor: pointer;
+    }
+  
+    /* before für den Balken-Effekt */
+    &::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
       background-color: var(--primary-color);
-      transition: width 0.3s ease, left 0.3s ease;
+      height: 2px;
+      width: 0; /* Der Balken startet bei 0 */
+      bottom: 0px;  /* Positioniere den Balken direkt unter dem Text */
+      left: 0;
+      transition: all 0.3s ease;  /* sanfte Animation */
     }
-
-    &:hover::after {
-      width: 100%;
+  
+    /* Balken-Effekt beim Hover */
+    &:hover::before {
+      width: 100%;  /* Balken wächst bei Hover */
     }
   }
 
@@ -126,7 +94,7 @@ form {
     border: none;
     position: relative;
     left: 168px;
-
+    top: 16px;
     &:hover {
       background: linear-gradient(160deg, #B5E93B, #547800);
       cursor: pointer;
@@ -141,13 +109,13 @@ form {
 
   .error-message {
     color: red;
-    font-size: 12px;
     position: absolute;
     top: 100%; /* Plaziert die Fehlermeldung direkt unter dem Input */
-    left: 0;
-    transform: translateY(4px); /* Verhindert das Verschieben des Layouts */
+    left: 50%;
+    transform: translateX(-50%) translateY(4px); /* Horizontale Zentrierung und vertikaler Abstand */
   }
 }
+
 
 .impressum-container{
   @include dFlex($g:20px);
@@ -249,12 +217,6 @@ form {
   cursor: pointer;
 }
 
-.error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
-}
-
 @media (max-width:800px) {
   section{
     flex-direction: column-reverse;
@@ -328,4 +290,19 @@ form {
     top: 16px;
     right: 124px;
   }
+}
+
+/* Autofill für Text- und E-Mail-Felder */
+input:-webkit-autofill, textarea:-webkit-autofill {
+  background-color: black !important; /* Hintergrund bleibt schwarz */
+  color: var(--primary-color) !important; /* Schrift bleibt in der primären Farbe */
+  border: 1px solid var(--primary-color) !important; /* Border bleibt in der primary-color */
+  -webkit-text-fill-color: var(--primary-color) !important; /* Textfarbe bleibt in der primary-color */
+  transition: background-color 5000s ease-in-out 0s; /* Verhindert das Wechseln der Hintergrundfarbe */
+}
+
+/* Autofill für andere Formularelemente (z.B. Checkboxen) */
+input:-webkit-autofill:hover, textarea:-webkit-autofill:hover {
+  background-color: black !important; /* Hintergrund bleibt schwarz beim Hover */
+  color: var(--primary-color) !important; /* Text bleibt in der primären Farbe */
 }

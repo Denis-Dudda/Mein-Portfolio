@@ -62,7 +62,7 @@
         "placeholderMessage": "Deine Nachicht",
         "submit": "Senden",
         "errorMessageName": "mindestens 5 zeichen verwenden",
-        "errorMessageMail": "@ oder . vergessen ?",
+        "errorMessageMail": "Keine gültige E-Mail-Adresse",
         "errorMessageText": "mindestens 15 zeichen verwenden",
         "errorBoxMessage": "Bitte stimmen Sie den Datenschutzrichtlinien zu, um fortzufahren."
     },

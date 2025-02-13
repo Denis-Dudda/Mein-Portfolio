@@ -19,7 +19,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 40px;
-
+  margin-top: 120px;
   .form-group {
     position: relative;
   }
@@ -236,7 +236,7 @@ form {
     >a{
       rotate: 90deg;
       position: relative;
-      top: 700px;
+      top: 780px;
     }
 
     .notice-policy-container{
@@ -271,14 +271,19 @@ form {
 }
 
 @media (max-width:450px) {
-  .contact-me-container{
-    >span{
-      font-size: 48px;
+
+  form{
+    .error-message{
+      width: 100%;
     }
+
  }
 
  .impressum-container{
     width: 90vw;
+    >a{
+      top: 800px;
+    }
  }
 }
 

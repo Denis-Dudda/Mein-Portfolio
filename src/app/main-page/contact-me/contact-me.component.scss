@@ -113,6 +113,7 @@ form {
     top: 100%; /* Plaziert die Fehlermeldung direkt unter dem Input */
     left: 50%;
     transform: translateX(-50%) translateY(4px); /* Horizontale Zentrierung und vertikaler Abstand */
+    width: 100%;
   }
 }
 
@@ -271,13 +272,6 @@ form {
 }
 
 @media (max-width:450px) {
-
-  form{
-    .error-message{
-      width: 100%;
-    }
-
- }
 
  .impressum-container{
     width: 90vw;

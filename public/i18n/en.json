@@ -60,7 +60,11 @@
         "placeholderName": "Your Name",
         "placeholderMail": "Your e-mail",
         "placeholderMessage": "Your message",
-        "submit": "Submit"
+        "submit": "Submit",
+        "errorMessageName": "Use at least 5 characters",
+        "errorMessageMail": "Missing '@' or '.'",
+        "errorMessageText": "Use at least 15 characters",
+        "errorBoxMessage": "You must agree to the privacy policy to proceed."
     },
 "PRIVACY": {
     "title": "Privacy Policy",

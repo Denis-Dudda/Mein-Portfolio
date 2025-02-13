@@ -20,20 +20,43 @@
   <a class="arrow-contact" (click)="scroll($event, 'contact')">
     <img src="./img/Arrow 7.svg" alt="">
   </a>
-  <div class="contact-me-container">
-    <span>{{'CONTACT.contact_me' | translate}}</span>
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">      
-      <input [(ngModel)]="contactData.name" class="name-mail" type="text" id="name" name="name" placeholder="{{'CONTACT.placeholderName' | translate}}" required><br><br>     
-      <input [(ngModel)]="contactData.email" class="name-mail" type="email" id="email" name="email" placeholder="{{'CONTACT.placeholderMail' | translate}}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"><br><br>   
-      <br>
-      <textarea [(ngModel)]="contactData.message" id="message" name="message" rows="4" placeholder="{{'CONTACT.placeholderMessage' | translate}}" required></textarea><br><br>   
-      <input [(ngModel)]="contactData.policy" class="check-box" type="checkbox" id="policy" name="policy" required>
-      <label for="policy">{{'CONTACT.read' | translate}}</label><a href="/privacy"> {{'CONTACT.policy' | translate}} </a>
-      <label for="policy">{{'CONTACT.agree' | translate}}<br>{{'CONTACT.myData' | translate}}</label>
-      <br><br>
-      <button type="submit"[disabled]="!contactForm.form.valid">{{'CONTACT.submit' | translate}}</button>
-    </form>
-  </div>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+    <!-- Name -->
+    <div class="form-group">
+      <input class="name-mail" type="text" id="name" name="name" [(ngModel)]="contactData.name" #name="ngModel" placeholder="{{ 'CONTACT.placeholderName' | translate }}" required minlength="5"/>
+      <div *ngIf="name.invalid && name.touched" class="error-message">{{ 'CONTACT.errorMessageName' | translate }}</div>
+    </div>
+  
+    <!-- E-Mail -->
+    <div class="form-group">
+      <input class="name-mail" type="email" id="email" name="email" [(ngModel)]="contactData.email" #email="ngModel" placeholder="{{ 'CONTACT.placeholderMail' | translate }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"/>
+      <div *ngIf="email.invalid && email.touched" class="error-message">{{ 'CONTACT.errorMessageMail' | translate }}</div>
+    </div>
+  
+    <!-- Message -->
+    <div class="form-group">
+      <textarea id="message" name="message" [(ngModel)]="contactData.message" #message="ngModel" rows="4" placeholder="{{ 'CONTACT.placeholderMessage' | translate }}" required minlength="15"
+      ></textarea>
+      <div *ngIf="message.invalid && message.touched" class="error-message">{{ 'CONTACT.errorMessageText' | translate }}</div>
+    </div>
+  
+    <!-- Privacy -->
+    <div class="form-group">
+      <label for="policy">
+        <input type="checkbox" id="policy" name="policy" [(ngModel)]="contactData.policy" #policy="ngModel" required/>{{ 'PRIVACY.title' | translate }}
+      </label>
+      <div *ngIf="policy.invalid && policy.touched" class="error-message">{{ 'CONTACT.errorBoxMessage' | translate }}</div>
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" [disabled]="!contactForm.valid">
+        {{ 'CONTACT.submit' | translate }}
+      </button>
+    </div>
+  </form>
+  
+  
   <div class="impressum-container">
     <h4>{{'CONTACT.let_us' | translate}}</h4>
     <span>{{'CONTACT.description' | translate}}</span>

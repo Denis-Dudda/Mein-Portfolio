@@ -60,7 +60,11 @@
         "placeholderName": "Dein Name",
         "placeholderMail": "Deine e-mail",
         "placeholderMessage": "Deine Nachicht",
-        "submit": "Senden"
+        "submit": "Senden",
+        "errorMessageName": "mindestens 5 zeichen verwenden",
+        "errorMessageMail": "@ oder . vergessen ?",
+        "errorMessageText": "mindestens 15 zeichen verwenden",
+        "errorBoxMessage": "Bitte stimmen Sie den Datenschutzrichtlinien zu, um fortzufahren."
     },
     
     "PRIVACY": {

@@ -14,21 +14,11 @@ section{
   }
 }
 
-.contact-me-container{
-  @include dFlex();
-  >span{
-  font-size: 64px;
-  font-weight: bold;
-  color: transparent; 
-  -webkit-text-stroke: 1px var(--primary-color); 
-  background: transparent; 
-  transform: rotate(180deg);
-  writing-mode: vertical-rl;
-  }
-}
-
 form{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   .name-mail{
     border: 1px solid var(--primary-color);
     border-radius: 50px;
@@ -233,20 +223,16 @@ form{
   cursor: pointer;
 }
 
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 @media (max-width:800px) {
   section{
     flex-direction: column-reverse;
     gap: 0px;
-  }
-
-  .contact-me-container{
-    flex-direction: column;
-    >span{
-      transform: rotate(0deg);
-      writing-mode: lr;
-      position: relative;
-      bottom: 320px;
-    }
   }
 
   .arrow-contact{

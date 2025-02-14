@@ -39,7 +39,7 @@ export class AnimationService {
     const target = document.getElementById(targetId);
   
     if (target) {
-      const isMobile = window.innerWidth < 800; // Prüfen, ob die Ansicht mobil ist
+      const isMobile = window.innerWidth < 1025; // Prüfen, ob die Ansicht mobil ist
       const offset = 80; // Abstand von 80px nach oben
   
       if (isMobile) {

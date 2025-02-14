@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
-
+  successMessageVisible = false;
 
   http = inject(HttpClient);
 
@@ -48,8 +48,12 @@ export class ContactMeComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-                        
+            this.successMessageVisible = true;         
             ngForm.resetForm();
+                      // Erfolgsnachricht nach 3 Sekunden ausblenden
+          setTimeout(() => {
+            this.successMessageVisible = false;
+          }, 3000);
           },
           error: (error) => {
             console.error(error);

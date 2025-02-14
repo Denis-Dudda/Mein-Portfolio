@@ -80,5 +80,10 @@
       <span>&copy; Denis Dudda</span>
     </div>
   </div>
+  <div *ngIf="successMessageVisible" class="success-overlay">
+    <div class="success-message">
+      {{ 'CONTACT.sendMessage' | translate }}
+    </div>
+  </div>
 </section>
 

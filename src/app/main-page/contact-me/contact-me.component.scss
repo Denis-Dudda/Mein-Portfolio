@@ -218,7 +218,7 @@ form {
   cursor: pointer;
 }
 
-@media (max-width:800px) {
+@media (max-width:1025px) {
   section{
     flex-direction: column-reverse;
     gap: 0px;
@@ -281,7 +281,7 @@ form {
  }
 }
 
-@media (min-width:801px) {
+@media (min-width:1025px) {
   .social-icon-wrapper{
     display: flex;
     gap: 16px;
@@ -291,17 +291,12 @@ form {
   }
 }
 
-/* Autofill für Text- und E-Mail-Felder */
-input:-webkit-autofill, textarea:-webkit-autofill {
-  background-color: black !important; /* Hintergrund bleibt schwarz */
-  color: var(--primary-color) !important; /* Schrift bleibt in der primären Farbe */
-  border: 1px solid var(--primary-color) !important; /* Border bleibt in der primary-color */
-  -webkit-text-fill-color: var(--primary-color) !important; /* Textfarbe bleibt in der primary-color */
-  transition: background-color 5000s ease-in-out 0s; /* Verhindert das Wechseln der Hintergrundfarbe */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: black !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  -webkit-text-fill-color: var(--primary-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Autofill für andere Formularelemente (z.B. Checkboxen) */
-input:-webkit-autofill:hover, textarea:-webkit-autofill:hover {
-  background-color: black !important; /* Hintergrund bleibt schwarz beim Hover */
-  color: var(--primary-color) !important; /* Text bleibt in der primären Farbe */
-}

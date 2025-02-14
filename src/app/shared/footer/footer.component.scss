@@ -69,7 +69,7 @@
     scale: 0.95;
   }
 
-@media (max-width: 800px) {
+@media (max-width: 1025px) {
     section {
         @include dFlex();
         flex-direction: column;

@@ -35,7 +35,7 @@ export class CardComponent implements OnInit {
   }
  
   private updateCardState(width: number): void {
-    this.isExpanded = width > 800;
+    this.isExpanded = width > 1025;
   }
 
   toggleExpand(): void {

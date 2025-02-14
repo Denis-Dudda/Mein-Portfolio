@@ -64,7 +64,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
       return;
     }
 
-    if (window.innerWidth > 800) {
+    if (window.innerWidth > 1024) {
       // Verhindert das Standardverhalten (vertikales Scrollen)
       event.preventDefault();
 
